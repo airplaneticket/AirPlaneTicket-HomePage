@@ -1,4 +1,3 @@
-
-module.exports = router => {
-    router.use("/login", require("./login"));
-};
+module.exports = routes => {
+    routes.use('/login', require('./login/index'));
+}
