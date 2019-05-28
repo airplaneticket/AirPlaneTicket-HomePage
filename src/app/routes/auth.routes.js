@@ -1,7 +1,7 @@
-const express = require('./node_modules/express');
+const express = require('express');
 
-const authController = require('../../controller/auth.controller');
-const authMiddleware = require('../../middleware/auth.middleware');
+const authController = require('../controller/auth.controller');
+const authMiddleware = require('../middleware/auth.middleware');
 
 const router = express.Router();
 
@@ -23,7 +23,6 @@ router.post('/register', authController.postRegister);
 
 router.post('/forgotpassword', authController.postForgotPassword);
 
-module.exports = router =>
-{
+module.exports = router => {
     router.use('/login')
 }

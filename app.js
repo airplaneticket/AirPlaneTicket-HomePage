@@ -6,7 +6,6 @@ const cookieParser = require('cookie-parser')
 const expressSession = require('express-session');
 const path = require('path');
 const morgan = require('morgan');
-const routes = require('./src/app/routes');
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true });
 
@@ -19,18 +18,17 @@ const session = expressSession({
     cookie: {}
 });
 
-// view engine setup
 app.set('views', path.join(__dirname, 'src', 'app', 'views'));
 app.set('view engine', 'ejs');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname,'src','app','public')));
+app.use(express.static(path.join(__dirname, 'src', 'app', 'public')));
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(session);
 
-routes(app);
+require('./src/app/routes/index')(app);
 
 
 app.listen(process.env.PORT);
