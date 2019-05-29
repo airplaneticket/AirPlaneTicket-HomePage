@@ -5,9 +5,9 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta name="description" content="MAVIA - Register, Reservation, Questionare, Reviews form wizard">
+	<meta name="description" content="P/D | Đăng kí">
 	<meta name="author" content="Ansonika">
-	<title>MAVIA | Register, Reservation, Questionare, Reviews form wizard</title>
+	<title>P/D | Đăng kí</title>
 
 	<!-- Favicons-->
 	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -16,18 +16,12 @@
 	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
 	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
 
-	<!-- GOOGLE WEB FONT -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
 
 	<!-- BASE CSS -->
-
-    <%include ../include/css.ejs%>
+    <%include ../../include/auth/css.ejs%>
 
 	<!-- YOUR CUSTOM CSS -->
 	<link href="css/custom.css" rel="stylesheet">
-
-	<script src="js/modernizr.js"></script>
-	<!-- Modernizr -->
 
 </head>
 
@@ -46,7 +40,7 @@
 		    <div class="row">
                 <div class="col-3">
                     <div id="logo_home">
-                        <h1><a href="index.html">P/D | Register</a></h1>
+                        <h1><a href="index.html">P/D | Đăng kí</a></h1>
                     </div>
                 </div>
                 <div class="col-9">
@@ -81,14 +75,13 @@
 			<div class="row">
 				<div class="col-lg-5">
 					<div id="left_form">
-						<figure><img src="img/registration_bg.svg" alt=""></figure>
-						<h2>Registration</h2>
-						<p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu, facete detracto patrioque an per, lucilius pertinacia eu vel.</p>
+						<figure><img src="homepage/images/registration_bg.svg" alt=""></figure>
+						<h2>Đăng kí</h2>
+						<p>Đăng kí thành viên ngay để nhận được những ưu đãi bất ngờ.</p>
 						<a href="#0" id="more_info" data-toggle="modal" data-target="#more-info"><i class="pe-7s-info"></i></a>
 					</div>
 				</div>
 				<div class="col-lg-7">
-
 					<div id="wizard_container">
 						<div id="top-wizard">
 							<div id="progressbar"></div>
@@ -98,18 +91,17 @@
 							<input id="website" name="website" type="text" value="">
 							<!-- Leave for security protection, read docs for details -->
 							<div id="middle-wizard">
-
 								<div class="step">
-									<h3 class="main_question"><strong>1/3</strong>Please fill with your details</h3>
+									<h3 class="main_question"><strong>1/2</strong>Thông tin cá nhân</h3>
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="firstname" class="form-control required" placeholder="First name">
+												<input type="text" name="firstname" class="form-control required" placeholder="Họ và tên">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="lastname" class="form-control required" placeholder="Last name">
+												<input type="text" name="lastname" class="form-control required" placeholder="CMND">
 											</div>
 										</div>
 									</div>
@@ -118,12 +110,12 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="email" name="email" class="form-control required" placeholder="Your Email">
+												<input type="email" name="email" class="form-control required" placeholder="Email">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="telephone" class="form-control" placeholder="Your Telephone">
+												<input type="text" name="telephone" class="form-control" placeholder="Số điện thoại">
 											</div>
 										</div>
 									</div>
@@ -132,13 +124,13 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="age" class="form-control" placeholder="Age">
+												<input type="text" name="age" class="form-control" placeholder="Tuổi">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group radio_input">
-												<label><input type="radio" value="Male" checked name="gender" class="icheck">Male</label>
-												<label><input type="radio" value="Female" name="gender" class="icheck">Female</label>
+												<label><input type="radio" value="Male" checked name="gender" class="icheck">Nam</label>
+												<label><input type="radio" value="Female" name="gender" class="icheck">Nữ</label>
 											</div>
 										</div>
 									</div>
@@ -146,12 +138,12 @@
 								</div>
 								<!-- /step-->
 
-								<div class="step">
-									<h3 class="main_question"><strong>2/3</strong>Please fill with additional info</h3>
+								<div class="submit step">
+									<h3 class="main_question"><strong>2/2</strong>Thông tin cá nhân</h3>
 									<div class="row">
 										<div class="col-md-12">
 											<div class="form-group">
-												<input type="text" name="address" class="form-control required" placeholder="Address">
+												<input type="text" name="address" class="form-control required" placeholder="Địa chỉ">
 											</div>
 										</div>
 										<!-- /col-sm-12 -->
@@ -160,22 +152,14 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="city" class="form-control required" placeholder="City">
+												<input type="text" name="city" class="form-control required" placeholder="Thành phố">
 											</div>
 										</div>
-										<div class="col-md-3">
-											<div class="form-group">
-												<input type="text" name="zip_code" class="form-control required" placeholder="Zip code">
-											</div>
-										</div>
-									</div>
-									<!-- /row -->
-									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
 												<div class="styled-select">
 													<select class="required" name="country">
-														<option value="" selected>Select your country</option>
+														<option value="" selected>Đất nước</option>
 														<option value="Europe">Europe</option>
 														<option value="Asia">Asia</option>
 														<option value="North America">North America</option>
@@ -185,11 +169,9 @@
 											</div>
 										</div>
 									</div>
-									<!-- /row -->
 								</div>
 								<!-- /step-->
-
-								<div class="submit step">
+								<!-- <div class="submit step">
 									<h3 class="main_question"><strong>3/3</strong>Send an optional message</h3>
 									<div class="form-group">
 										<textarea name="additional_message" class="form-control" style="height:150px;" placeholder="Hello world....write your messagere here!"></textarea>
@@ -198,14 +180,14 @@
 										<input name="terms" type="checkbox" class="icheck required" value="yes">
 										<label>Please accept <a href="#" data-toggle="modal" data-target="#terms-txt">terms and conditions</a> ?</label>
 									</div>
-								</div>
+								</div> -->
 								<!-- /step-->
 							</div>
 							<!-- /middle-wizard -->
 							<div id="bottom-wizard">
-								<button type="button" name="backward" class="backward">Backward </button>
-								<button type="button" name="forward" class="forward">Forward</button>
-								<button type="submit" name="process" class="submit">Submit</button>
+								<button type="button" name="backward" class="backward">Quay lại</button>
+								<button type="button" name="forward" class="forward">Tiếp theo</button>
+								<button type="submit" name="process" class="submit">Đăng kí</button>
 							</div>
 							<!-- /bottom-wizard -->
 						</form>
@@ -215,13 +197,12 @@
 			</div><!-- /Row -->
 		</div><!-- /Form_container -->
 	</main>
-	
 	<footer id="home" class="clearfix">
 		<p>© 2019 P/D</p>
 		<ul>
-			<li><a href="#0" class="animated_link">Purchase this template</a></li>
-			<li><a href="#0" class="animated_link">Terms and conditions</a></li>
-			<li><a href="#0" class="animated_link">Contacts</a></li>
+			<li><a href="/login" class="animated_link">Log-In</a></li>
+			<li><a href="#0" class="animated_link">Fights</a></li>
+			<li><a href="#0" class="animated_link">FeedBack</a></li>
 		</ul>
 	</footer>
 	<!-- end footer-->
@@ -284,7 +265,7 @@
 	</div>
 	<!-- /.modal -->
 
-    <%include ../include/js.ejs%>
+    <%include ../../include/auth/js.ejs%>
 
 
 </body>

@@ -1,52 +1,424 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>P/D - Airline</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <%-include ../include/homepage/css.ejs%>
+  </head>
+  <body>
+    <%-include ../partials/common/header%>
+    <section
+      class="hero-wrap js-fullheight"
+      style="background-image: url('homepage/images/airplane_sky_flight_clouds_sunset_116695_3840x2400.jpg');background-position: center;"
+      data-section="home"
+    >
+      <div class="overlay"></div>
+      <div class="container">
+        <div
+          class="row no-gutters slider-text js-fullheight align-items-center justify-content-start"
+          data-scrollax-parent="true"
+        >
+          <div
+            class="col-md-8 ftco-animate mt-5"
+            data-scrollax=" properties: { translateY: '70%' }"
+          >
+            <h1
+              class="mb-4"
+              data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
+            >
+              Chúng tôi sẽ mang đến cho bạn một trải nghiệm tuyệt vời
+            </h1>
+            <p
+              class="mb-4"
+              data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"
+            >
+              Du lịch mọi nơi cùng với P/D - Airline
+            </p>
+            <a href="/register">
+            vo
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<head>
-    <title>PhongA</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Lingua project">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-
-<body>
-    <div class="super_container">
-        <!-- Header -->
-                <!-- Home -->
-                <div class="home">
-                    <div class="home_background" style="background-image: url(/images/index_background.jpg);"></div>
-                    <div class="home_content">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col text-center">
-                                    <h1 class="home_title">Learn Languages Easily</h1>
-                                </div>
-                            </div>
-                        </div>
+    <section class="ftco-section ftco-services ftco-no-pt">
+      <div class="services-section">
+        <div class="col-md-12 col-lg-12 d-flex align-self-stretch ftco-animate">
+          <div class="container">
+            <div class="media block-6 services d-block">
+              <div class="media-body">
+                <h3 class="heading text-center mb-3">Vé máy bay</h3>
+                <hr />
+                <form>
+                  <div class="row">
+                    <div class="col-12 col-lg-12 col-md-12 col-sm-12">
+                      <input
+                        type="radio"
+                        id="motchieu"
+                        name="loaiBay"
+                        value=""
+                      />
+                      <label class="" for="motchieu">
+                        Một chiều
+                      </label>
+                      &nbsp;
+                      <input type="radio" id="khuhoi" name="loaiBay" value="" />
+                      <label class="" for="khuhoi">
+                        Khứ hồi
+                      </label>
                     </div>
-                </div>
-                <!-- Language -->
-                <!-- Courses -->
-                <div class="courses">
-                    <div class="courses_background"></div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col">
-                                <h2 class="section_title text-center">Newest Online Courses</h2>
-                            </div>
+                    <div class="col-6 col-sm-12 col-md-12 col-lg-6">
+                      <div class="form-group" style="display: inline-block">
+                        <label for="">Điểm khởi hành</label>
+                        <div class="dropdown open">
+                          <button
+                            class="btn btn-secondary dropdown-toggle"
+                            type="button"
+                            id="triggerId"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            Dropdown
+                          </button>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="triggerId"
+                          >
+                            <button class="dropdown-item" href="#">
+                              Action
+                            </button>
+                            <button class="dropdown-item disabled" href="#">
+                              Disabled action
+                            </button>
+                          </div>
                         </div>
-                        <div class="row courses_row">
-
-                            <!-- Course -->
+                      </div>
+                      &nbsp;
+                      <div class="form-group" style="display: inline-block">
+                        <label for="">Điểm đến</label>
+                        <div class="dropdown open">
+                          <button
+                            class="btn btn-secondary dropdown-toggle"
+                            type="button"
+                            id="triggerId"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            Dropdown
+                          </button>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="triggerId"
+                          >
+                            <button class="dropdown-item" href="#">
+                              Action
+                            </button>
+                            <button class="dropdown-item disabled" href="#">
+                              Disabled action
+                            </button>
+                          </div>
                         </div>
+                      </div>
+                      <div class="form-row">
+                        <div class="col">
+                          <label for="">Ngày giờ</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="First name"
+                          />
+                        </div>
+                        <div class="col">
+                          <label for="">Khứ hồi</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Last name"
+                          />
+                        </div>
+                      </div>
                     </div>
-                </div>
-                <!-- Instructors -->
+                    <div class="col-6 col-sm-12 col-md-12 col-lg-6">
+                      <div class="form-group">
+                        <label for="">Số lượng khách hàng</label>
+                        <div class="dropdown open">
+                          <button
+                            class="btn btn-secondary dropdown-toggle"
+                            type="button"
+                            id="triggerId"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            Dropdown
+                          </button>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="triggerId"
+                          >
+                            <button class="dropdown-item" href="#">
+                              Action
+                            </button>
+                            <button class="dropdown-item disabled" href="#">
+                              Disabled action
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="">Hạng ghế</label>
+                        <div class="dropdown open">
+                          <button
+                            class="btn btn-secondary dropdown-toggle"
+                            type="button"
+                            id="triggerId"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                            Dropdown
+                          </button>
+                          <div
+                            class="dropdown-menu"
+                            aria-labelledby="triggerId"
+                          >
+                            <button class="dropdown-item" href="#">
+                              Action
+                            </button>
+                            <button class="dropdown-item disabled" href="#">
+                              Disabled action
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <!-- Register -->
-                <!-- Blog -->
-                <!-- Footer -->
+    <section class="ftco-section contact-section">
+      <div class="container">
+        <div class="row d-flex contact-info">
+          <div class="col-md-6 col-lg-3 d-flex">
+            <div class="align-self-stretch box p-4 text-center">
+              <div
+                class="icon d-flex align-items-center justify-content-center"
+              >
+                <span class="icon-map-signs"></span>
+              </div>
+              <h3 class="mb-4">Address</h3>
+              <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex">
+            <div class="align-self-stretch box p-4 text-center">
+              <div
+                class="icon d-flex align-items-center justify-content-center"
+              >
+                <span class="icon-phone2"></span>
+              </div>
+              <h3 class="mb-4">Contact Number</h3>
+              <p><a href="tel://1234567920">+ 1235 2355 98</a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex">
+            <div class="align-self-stretch box p-4 text-center">
+              <div
+                class="icon d-flex align-items-center justify-content-center"
+              >
+                <span class="icon-paper-plane"></span>
+              </div>
+              <h3 class="mb-4">Email Address</h3>
+              <p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex">
+            <div class="align-self-stretch box p-4 text-center">
+              <div
+                class="icon d-flex align-items-center justify-content-center"
+              >
+                <span class="icon-globe"></span>
+              </div>
+              <h3 class="mb-4">Website</h3>
+              <p><a href="#">yoursite.com</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="ftco-footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Square</h2>
+              <p>
+                Far far away, behind the word mountains, far from the countries
+                Vokalia and Consonantia, there live the blind texts.
+              </p>
+              <ul
+                class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
+              >
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li class="ftco-animate">
+                  <a href="#"><span class="icon-instagram"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Links</h2>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#"
+                    ><span class="icon-long-arrow-right mr-2"></span>Home</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><span class="icon-long-arrow-right mr-2"></span>About</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><span class="icon-long-arrow-right mr-2"></span>Services</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><span class="icon-long-arrow-right mr-2"></span>Projects</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><span class="icon-long-arrow-right mr-2"></span>Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Services</h2>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="#"
+                    ><span class="icon-long-arrow-right mr-2"></span
+                    >Architectural Design</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><span class="icon-long-arrow-right mr-2"></span>Interior
+                    Design</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><span class="icon-long-arrow-right mr-2"></span>Exterior
+                    Design</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><span class="icon-long-arrow-right mr-2"></span>Lighting
+                    Design</a
+                  >
+                </li>
+                <li>
+                  <a href="#"
+                    ><span class="icon-long-arrow-right mr-2"></span>AutoCAD
+                    Service</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Questions?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li>
+                    <span class="icon icon-map-marker"></span
+                    ><span class="text"
+                      >203 Fake St. Mountain View, San Francisco, California,
+                      USA</span
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="icon icon-phone"></span
+                      ><span class="text">+2 392 3929 210</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="#"
+                      ><span class="icon icon-envelope"></span
+                      ><span class="text">info@yourdomain.com</span></a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <p>
+              Copyright &copy;<script>
+                document.write(new Date().getFullYear());
+              </script>
+              P/D
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle
+          class="path-bg"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke="#eeeeee"
+        />
+        <circle
+          class="path"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke-miterlimit="10"
+          stroke="#F96D00"
+        />
+      </svg>
     </div>
-</body>
 
+    <%-include ../include/homepage/js.ejs%>
+  </body>
 </html>

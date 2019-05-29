@@ -2,7 +2,7 @@ const authModel = require('../../models/auth.model');
 
 module.exports.requireLogin = async function(req, res, next) {
     if (!req.session.user && !req.cookies.userSessionId)
-        res.redirect('/auth/login');
+        res.redirect('/login');
     res.locals.user = req.session.user;
     next();
 }

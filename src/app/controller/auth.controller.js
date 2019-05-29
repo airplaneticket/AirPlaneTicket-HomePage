@@ -1,18 +1,17 @@
 const authModel = require('../../models/auth.model');
 const verifyUserModel = require('../../models/verify-users.model');
-const emailFunctions = require('../functions/email.functions');
+const emailFunctions = require('../../services/email.functions');
 
 module.exports.login = function(req, res) {
-    res.render('auth/login.ejs');
+    res.render('homepage/login/login.ejs');
 }
 
-
 module.exports.register = function(req, res) {
-    res.render('auth/register.ejs');
+    res.render('homepage/register/register.ejs');
 }
 
 module.exports.forgotPassword = function(req, res) {
-    res.render('auth/forgot-password.ejs');
+    res.render('homepage/forgotPassword/forgot-password.ejs');
 }
 
 module.exports.logout = function(req, res) {
@@ -21,7 +20,7 @@ module.exports.logout = function(req, res) {
 }
 
 module.exports.viewUser = function(req, res) {
-    res.render('auth/user-information.ejs');
+    res.render('homepage/profile/profile.ejs');
 }
 
 module.exports.verify = async function(req, res) {
@@ -53,7 +52,7 @@ module.exports.postLogin = async function(req, res) {
     }
     let user = await authModel.find({ username: username });
     if (user.length <= 0) {
-        res.render('auth/login.ejs', {
+        res.render('homepage/login/login.ejs', {
             inputData: inputData,
             usernameError: 'Username not found'
         });
@@ -67,13 +66,13 @@ module.exports.postLogin = async function(req, res) {
                     req.session.cookie.maxAge = 1000 * 60 * 60 * 24 * 7;
                     res.redirect('/');
                 } else {
-                    res.render('auth/login.ejs', {
+                    res.render('homepage/login/login.ejs', {
                         inputData: inputData,
                         activeError: "Your account hasn't actived. Please check your email"
                     });
                 }
             } else {
-                res.render('auth/login.ejs', {
+                res.render('homepage/login/login.ejs', {
                     inputData: inputData,
                     passwordError: 'Wrong password!'
                 });
@@ -95,14 +94,14 @@ module.exports.postRegister = async function(req, res) {
     }
     let user = await authModel.find({ username: inputUsername });
     if (user.length > 0) {
-        res.render('auth/register.ejs', {
+        res.render('homepage/register/register.ejs', {
             usernameError: 'Username has been registered!',
             inputData: inputData
         });
         return;
     }
     if (inputPassword.length < 8) {
-        res.render('auth/register.ejs', {
+        res.render('homepage/register/register.ejs', {
             passwordError: 'Password must be more than 8 character!',
             inputData: inputData
         });
@@ -155,7 +154,7 @@ module.exports.postForgotPassword = async function(req, res) {
             });
 
     } else {
-        res.render('auth/forgot-password.ejs', {
+        res.render('homepage/forgotPassword/forgotPassword.ejs', {
             forgotPasswordError: "Username or Email not found",
             inputData: inputData
         });
