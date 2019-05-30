@@ -54,8 +54,8 @@
                     <!-- /social -->
                     <nav>
                         <ul class="cd-primary-nav">
-                            <li><a href="/" class="animated_link">Homepage</a></li>
-                            <li><a href="reservation_version.html" class="animated_link">Reservation Version</a></li>
+                            <li><a href="/" class="animated_link">Trang chủ</a></li>
+                            <li><a href="reservation_version.html" class="animated_link">Đặt vé</a></li>
                             <li><a href="questionare_version.html" class="animated_link">Questionare Version</a></li>
                             <li><a href="review_version.html" class="animated_link">Review Version</a></li>
                             <li><a href="about.html" class="animated_link">About Us</a></li>
@@ -91,23 +91,43 @@
 												<input type="password" name="loginPassword" class="form-control required" placeholder="Password">
 											</div>
 										</div>
-										<div class="col-md-7">
-											<button type="submit" name="process" class="submit">Đăng nhập</button>
-										</div>
+									</div>
+									&nbsp;
+									<div class="alert alert-danger" role="alert">
+										Tên tài khoản hoặc mật khẩu không đúng !
 									</div>
 								</div>
-							</div>
-							<!-- /middle-wizard -->
-						</form>
+								<!-- /middle-wizard -->
+							</form>
+						</div>
+					</div>
+				</div><!-- /Row -->
+			</div><!-- /Form_container -->
+			<!-- Button trigger modal -->
+			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+			Launch demo modal
+			</button>
+
+			<!-- Modal -->
+			<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLongTitle">Thông báo</h5>
+					</div>
+					<div class="modal-body text-center">
+						<i class="far fa-check-circle text-success" style="font-size: 48px"></i>
+						<p>Email được gửi thành công</p>
+					</div>
 					</div>
 				</div>
-			</div><!-- /Row -->
-		</div><!-- /Form_container -->
+			</div>
+		</div>
 	</main>
 
 	<footer id="home" class="clearfix">
 		<p>© 2019 P/D</p>
-		<ul>
+		<ul>	
 			<li><a href="#0" class="animated_link">Purchase this template</a></li>
 			<li><a href="#0" class="animated_link">Terms and conditions</a></li>
 			<li><a href="#0" class="animated_link">Contacts</a></li>
