@@ -69,58 +69,50 @@
 	</header>
 	<!-- End Header -->
 
-	<main>
-		<div id="form_container" style="width: 26vw;">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="container">
-						<form action="/login" method="POST">
-							<input id="website" name="website" type="text" value="">
-							<!-- Leave for security protection, read docs for details -->
-							<div id="middle-wizard">
-								<div class="step">
-									<h3 class="main_question">Đăng nhập</h3>
-									<div class="row">
-										<div class="col-md-12">
-											<div class="form-group">
-												<input type="text" name="loginEmail" class="form-control required" placeholder="Email">
+	<main class="my-3 mx-3">
+		<div class="container">
+			<div id="form_container" class="form_size">
+				<div class="row">
+					<div class="col-12 ">
+						<div class="container">
+							<form action="/login" method="POST">
+								<input id="website" name="website" type="text" value="">
+								<!-- Leave for security protection, read docs for details -->
+								<div id="middle-wizard" style="padding: 3rem .5rem 0 .5rem">
+									<div class="col-lg-12">
+										<div class="step">
+											<h3 class="main_question">Đăng nhập</h3>
+											<div class="row">
+												<div class="col-md-12">
+													<div class="form-group">
+														<input type="text" name="loginEmail" class="form-control required" placeholder="Email" required>
+													</div>
+												</div>
+												<div class="col-md-12">
+													<div class="form-group">
+														<input type="password" name="loginPassword" class="form-control required" placeholder="Password" required>
+													</div>
+												</div>
 											</div>
-										</div>
-										<div class="col-md-12">
-											<div class="form-group">
-												<input type="password" name="loginPassword" class="form-control required" placeholder="Password">
+											<div class="float-right">
+												<button type="submit" name="process" class="submit">Đăng nhập</button>
 											</div>
+											<div class="clearfix"></div>
+											&nbsp;
+										
 										</div>
 									</div>
-									&nbsp;
-									<div class="alert alert-danger" role="alert">
-										Tên tài khoản hoặc mật khẩu không đúng !
-									</div>
+								
 								</div>
-								<!-- /middle-wizard -->
+								<!-- /middle-wizard
+								<div class="col-12 alert alert-danger" role="alert">
+									Tên tài khoản hoặc mật khẩu không đúng !
+								</div>
+									-->
 							</form>
 						</div>
-					</div>
-				</div><!-- /Row -->
-			</div><!-- /Form_container -->
-			<!-- Button trigger modal -->
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-			Launch demo modal
-			</button>
-
-			<!-- Modal -->
-			<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-				<div class="modal-dialog modal-dialog-centered" role="document">
-					<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLongTitle">Thông báo</h5>
-					</div>
-					<div class="modal-body text-center">
-						<i class="far fa-check-circle text-success" style="font-size: 48px"></i>
-						<p>Email được gửi thành công</p>
-					</div>
-					</div>
-				</div>
+					</div><!-- /Row -->
+				</div><!-- /Form_container -->
 			</div>
 		</div>
 	</main>
