@@ -1,0 +1,9 @@
+#form_container {
+    width: 26rem;
+}
+
+@media (max-width: 991px) {
+    #form_container {
+        width: auto;
+    }
+}
