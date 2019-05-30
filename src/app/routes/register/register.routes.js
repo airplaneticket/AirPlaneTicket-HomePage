@@ -4,7 +4,7 @@ const registerController = require('../../controller/register.controller');
 
 const router = express.Router();
 
-router.get('/', registerController.getregister);
+router.get('/', registerController.getRegister);
 
 router.get('/verify/:hash', registerController.getVerify)
 

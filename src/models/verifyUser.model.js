@@ -11,6 +11,6 @@ verifyUsersSchema.methods.input = function(id) {
     this.hash = md5(process.env.HASH_VERIFY_STRING + this.userId);
 }
 
-let verifyUserModel = mongoose.model('verifyUserModel', verifyUsersSchema, 'users-verify');
+let verifyUserModel = mongoose.model('verifyUserModel', verifyUsersSchema, 'VerifyUsers');
 
 module.exports = verifyUserModel;

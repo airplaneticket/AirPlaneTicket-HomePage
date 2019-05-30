@@ -21,7 +21,7 @@ const session = expressSession({
 app.set('views', path.join(__dirname, 'src', 'app', 'views'));
 app.set('view engine', 'ejs');
 
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'src', 'app', 'public')));

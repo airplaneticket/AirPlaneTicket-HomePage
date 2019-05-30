@@ -12,7 +12,7 @@ module.exports.sendMailVerify = function(email, hash, password, res) {
         from: 'AirPlaneTicket PhongDuy mailbox', // sender address
         to: email, // list of receivers
         subject: 'Verify mail from AirPlaneTicket PhongDuy website',
-        html: '<p><b>Please click this link to verify your account:</b> http://localhost:' + process.env.PORT + '/auth/verify/' + hash + '</p>\n<i>Your password: </i>' + '<b>' + password + '</b>'
+        html: '<p><b>Please click this link to verify your account:</b> http://localhost:' + process.env.PORT + '/register/verify/' + hash + '</p>\n<i>Your password: </i>' + '<b>' + password + '</b>'
     };
     transporter.sendMail(mailOptions, function(err, info) {
         if (err)
