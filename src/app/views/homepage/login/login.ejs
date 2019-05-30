@@ -25,11 +25,11 @@
 </head>
 
 <body>
-	
+
 	<div id="preloader">
 		<div data-loader="circle-side"></div>
 	</div><!-- /Preload -->
-	
+
 	<div id="loader_form">
 		<div data-loader="circle-side-2"></div>
 	</div><!-- /loader_form -->
@@ -70,30 +70,25 @@
 	<!-- End Header -->
 
 	<main>
-		<div class="container">
-			<div id="form_container">
-				<div class="row">
-					<div class="col-12">
-						<div class="container">
-							<form name="" id="" method="POST">
-								<input id="website" name="website" type="text" value="">
-								<!-- Leave for security protection, read docs for details -->
-								<div id="middle-wizard">
-									<div class="step">
-										<h3 class="main_question">Đăng nhập</h3>
-										<div class="row">
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" name="firstname" class="form-control required" placeholder="First name">
-												</div>
+		<div id="form_container" style="width: 26vw;">
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="container">
+						<form action="/login" method="POST">
+							<input id="website" name="website" type="text" value="">
+							<!-- Leave for security protection, read docs for details -->
+							<div id="middle-wizard">
+								<div class="step">
+									<h3 class="main_question">Đăng nhập</h3>
+									<div class="row">
+										<div class="col-md-12">
+											<div class="form-group">
+												<input type="text" name="loginEmail" class="form-control required" placeholder="Email">
 											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="text" name="lastname" class="form-control required" placeholder="Last name">
-												</div>
-											</div>
-											<div class="col-md-7">
-												<button type="submit" name="" class="submit">Đăng nhập</button>
+										</div>
+										<div class="col-md-12">
+											<div class="form-group">
+												<input type="password" name="loginPassword" class="form-control required" placeholder="Password">
 											</div>
 										</div>
 									</div>
@@ -129,7 +124,7 @@
 			</div>
 		</div>
 	</main>
-	
+
 	<footer id="home" class="clearfix">
 		<p>© 2019 P/D</p>
 		<ul>	
@@ -139,7 +134,7 @@
 		</ul>
 	</footer>
 	<!-- end footer-->
-	
+
 	<div class="cd-overlay-nav">
 		<span></span>
 	</div>

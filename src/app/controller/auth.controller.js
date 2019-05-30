@@ -1,6 +1,6 @@
-const authModel = require('../../models/auth.model');
-const verifyUserModel = require('../../models/verify-users.model');
-const emailFunctions = require('../../services/email.functions');
+const authModel = require('../../models/user.model');
+const verifyUserModel = require('../../models/verifyUser.model');
+const emailFunctions = require('../../services/email.service');
 
 module.exports.login = function(req, res) {
     res.render('homepage/login/login.ejs');

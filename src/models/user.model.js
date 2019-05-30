@@ -3,13 +3,37 @@ const bcrypt = require('bcrypt');
 
 let saltRound = 10;
 let usersSchema = new mongoose.Schema({
-    username: String,
-    password: String,
-    fullname: String,
-    email: String,
-    courses: { type: Object, default: [] },
-    active: { type: Boolean, default: false },
-    permission: { type: String, default: 'user' }
+    email: {
+        type: String,
+        required: true
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    fullname: {
+        type: String,
+        required: true
+    },
+    identityNumber: {
+        type: Number,
+        required: true
+    },
+    phone: {
+        type: Number,
+        required: true
+    },
+    address: {
+        type: Number
+    },
+    active: {
+        type: Boolean,
+        default: false
+    },
+    permission: {
+        type: String,
+        default: 'user'
+    }
 });
 
 usersSchema.methods.hashPassword = async function() {
@@ -30,6 +54,6 @@ usersSchema.methods.forgotPassword = async function(hashString) {
         });
 }
 
-let authModel = mongoose.model('authModel', usersSchema, 'users-data');
+let userModel = mongoose.model('userModel', usersSchema, 'Users');
 
-module.exports = authModel;
+module.exports = userModel;

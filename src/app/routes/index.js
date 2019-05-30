@@ -1,6 +1,5 @@
 module.exports = routes => {
-    routes.use('/login', require('./login/index'));
-    routes.use('/register', require('./register/index'));
-    routes.use('/airticket', require('./airticket/index'));
+    routes.use('/login', require('./login/login.routes'));
+    routes.use('/register', require('./register/register.routes'));
     routes.use('/', require('./homepage/index'));
 }
