@@ -19,9 +19,6 @@
 	<!-- BASE CSS -->
     <%include ../../include/auth/css.ejs%>
 
-	<!-- YOUR CUSTOM CSS -->
-	<link href="css/custom.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -34,40 +31,7 @@
 		<div data-loader="circle-side-2"></div>
 	</div><!-- /loader_form -->
 
-	<header>
-		<div class="container-fluid">
-		    <div class="row">
-                <div class="col-3">
-                    <div id="logo_home">
-                        <h1><a href="index.html">P/D | Đăng nhập</a></h1>
-                    </div>
-                </div>
-                <div class="col-9">
-                    <div id="social">
-                        <ul>
-                            <li><a href="#0"><i class="icon-facebook"></i></a></li>
-                            <li><a href="#0"><i class="icon-twitter"></i></a></li>
-                            <li><a href="#0"><i class="icon-google"></i></a></li>
-                            <li><a href="#0"><i class="icon-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                    <!-- /social -->
-                    <nav>
-                        <ul class="cd-primary-nav">
-                            <li><a href="/" class="animated_link">Trang chủ</a></li>
-                            <li><a href="reservation_version.html" class="animated_link">Đặt vé</a></li>
-                            <li><a href="questionare_version.html" class="animated_link">Questionare Version</a></li>
-                            <li><a href="review_version.html" class="animated_link">Review Version</a></li>
-                            <li><a href="about.html" class="animated_link">About Us</a></li>
-                            <li><a href="contacts.html" class="animated_link">Contact Us</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-		</div>
-		<!-- container -->
-	</header>
-	<!-- End Header -->
+    <%include ../../partials/common/header-auth.ejs%>
 
 	<main class="my-3 mx-3">
 		<div class="container">
@@ -78,10 +42,11 @@
 							<form action="/login" method="POST">
 								<input id="website" name="website" type="text" value="">
 								<!-- Leave for security protection, read docs for details -->
-								<div id="middle-wizard" style="padding: 3rem .5rem 0 .5rem">
+								<div id="middle-wizard" style="padding: 2rem .5rem 0 .5rem">
 									<div class="col-lg-12">
 										<div class="step">
-											<h3 class="main_question">Đăng nhập</h3>
+											<h3 class="main_question text-center">Đăng nhập</h3>
+											<p class="text-center">Sử dụng tài khoản email của bạn</p>
 											<div class="row">
 												<div class="col-md-12">
 													<div class="form-group">
@@ -93,39 +58,40 @@
 														<input type="password" name="loginPassword" class="form-control required" placeholder="Password" required>
 													</div>
 												</div>
+												<div class="col-md-12">
+													<a href="#0">Bạn quên mật khẩu?</a>
+												</div>
 											</div>
-											<div class="float-right">
-												<button type="submit" name="process" class="submit">Đăng nhập</button>
+											<div class="row">
+												<div class="col-12 clearfix mt-2">
+													<span>
+														<a href="/register" class="float-left">Tạo tài khoản</a>
+													</span>
+													<button type="submit" name="process" class="submit btn_login float-right">Đăng nhập</button>
+												</div>
 											</div>
-											<div class="clearfix"></div>
-											&nbsp;
-										
 										</div>
 									</div>
-								
 								</div>
-								<!-- /middle-wizard
-								<div class="col-12 alert alert-danger" role="alert">
+								<!--
+								<div class="col-12 alert alert-danger mt-2" role="alert">
 									Tên tài khoản hoặc mật khẩu không đúng !
-								</div>
-									-->
+								</div> -->
+								<!-- /Notification-->
+                				<hr class="my-3"/>
+								<p class="text-center my-2">© 2019 P/D</p>
+								<!-- /middle-wizard-->
 							</form>
+							<!-- /Form -->
 						</div>
-					</div><!-- /Row -->
-				</div><!-- /Form_container -->
+					</div>
+					<!-- /Col -->
+				</div>
+				<!-- /Row -->
 			</div>
+			<!-- /Form_container -->
 		</div>
 	</main>
-
-	<footer id="home" class="clearfix">
-		<p>© 2019 P/D</p>
-		<ul>	
-			<li><a href="#0" class="animated_link">Purchase this template</a></li>
-			<li><a href="#0" class="animated_link">Terms and conditions</a></li>
-			<li><a href="#0" class="animated_link">Contacts</a></li>
-		</ul>
-	</footer>
-	<!-- end footer-->
 
 	<div class="cd-overlay-nav">
 		<span></span>
@@ -139,54 +105,8 @@
 
 	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
 
-	<!-- Modal terms -->
-	<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn_1" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /.modal -->
-
-	<!-- Modal info -->
-	<div class="modal fade" id="more-info" tabindex="-1" role="dialog" aria-labelledby="more-infoLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h4 class="modal-title" id="more-infoLabel">Frequently asked questions</h4>
-					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				</div>
-				<div class="modal-body">
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-					<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum sanctus, pro ne quod dicunt sensibus.</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn_1" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-			<!-- /.modal-content -->
-		</div>
-		<!-- /.modal-dialog -->
-	</div>
-	<!-- /.modal -->
 
     <%include ../../include/auth/js.ejs%>
-
 
 </body>
 </html>
