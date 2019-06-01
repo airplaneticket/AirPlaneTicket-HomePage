@@ -15,6 +15,10 @@ let usersSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    gender: {
+        type: String,
+        required: true
+    },
     identityNumber: {
         type: Number,
         required: true
@@ -24,7 +28,7 @@ let usersSchema = new mongoose.Schema({
         required: true
     },
     address: {
-        type: Number
+        type: String
     },
     active: {
         type: Boolean,

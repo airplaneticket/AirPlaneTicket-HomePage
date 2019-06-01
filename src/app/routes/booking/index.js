@@ -1,8 +1,9 @@
 const express = require('express');
+
+const bookingController = require('../../controller/booking.controller')
+
 const router = express.Router();
 
-router.get('/booking',(req,res) => {
-    res.render('homepage/booking/index.ejs');
-});
+router.get('/booking', bookingController.getBooking);
 
 module.exports = router;
