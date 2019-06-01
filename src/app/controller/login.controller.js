@@ -17,9 +17,8 @@ module.exports.postLogin = async function(req, res) {
         if (!user) {
             res.render('homepage/login/login.ejs', {
                 inputData: inputData,
-                emailError: 'Email not found'
+                error: "Không tìm thấy email"
             });
-            console.log('Email not found');
             return;
         }
         user.isRightPassword(inputData.password)
@@ -29,17 +28,16 @@ module.exports.postLogin = async function(req, res) {
                         req.session.user = user;
                         req.session.cookie.maxAge = 1000 * 60 * 60 * 24 * 7;
                         res.redirect('/');
-                        console.log('logined');
                     } else {
                         res.render('homepage/login/login.ejs', {
                             inputData: inputData,
-                            activeError: "Your account hasn't actived. Please check your email"
+                            error: "Tài khoản chưa được kích hoạt. Kiểm tra mail để kích hoạt tài khoản"
                         });
                     }
                 } else {
                     res.render('homepage/login/login.ejs', {
                         inputData: inputData,
-                        passwordError: 'Wrong password!'
+                        error: 'Sai mật khẩu'
                     });
                     return;
                 }
@@ -47,6 +45,6 @@ module.exports.postLogin = async function(req, res) {
     } catch (err) {
         console.log(err);
         res.status(400);
-        res.send('something wrong');
+        res.send('Có lỗi xảy ra. Hãy tải lại trang');
     }
 }

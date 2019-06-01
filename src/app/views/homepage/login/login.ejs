@@ -73,10 +73,11 @@
 										</div>
 									</div>
 								</div>
-								<!--
+								<%if(typeof error === "string"){%>
 								<div class="col-12 alert alert-danger mt-2" role="alert">
-									Tên tài khoản hoặc mật khẩu không đúng !
-								</div> -->
+									<%-error%>
+								</div>
+								<%}%>
 								<!-- /Notification-->
                 				<hr class="my-3"/>
 								<p class="text-center my-2">© 2019 P/D</p>
