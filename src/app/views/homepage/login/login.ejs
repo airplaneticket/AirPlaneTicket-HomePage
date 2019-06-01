@@ -50,7 +50,9 @@
 											<div class="row">
 												<div class="col-md-12">
 													<div class="form-group">
-														<input type="text" name="loginEmail" class="form-control required" placeholder="Email" required>
+														<input type="text" name="loginEmail" class="form-control required" placeholder="Email"
+														value ="<%if(typeof inputData === 'object'){%><%-inputData.email%><%}%>"
+														required>
 													</div>
 												</div>
 												<div class="col-md-12">
