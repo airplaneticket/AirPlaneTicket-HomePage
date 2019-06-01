@@ -9,4 +9,11 @@ jQuery(document).ready(function($){
 		minView: 2,
 		forceParse: 0
     });
+    var isChecked = $('#khuhoi').is(':checked')
+    $('#khuhoi').on('change', function() {
+        $('.timeKhuHoi').css('display','inline');
+    })
+    $('#motchieu').on('change', function() {
+        $('.timeKhuHoi').css('display','none');
+    })
 })
