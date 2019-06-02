@@ -20,6 +20,6 @@ let airPortSchema = new mongoose.Schema({
 });
 
 
-let airPortModel = mongoose.model('airPortModel', airPortSchema, 'AirPort');
+let airPortModel = mongoose.model('airPortModel', airPortSchema, 'AirPorts');
 
 module.exports = airPortModel;

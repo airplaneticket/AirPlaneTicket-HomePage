@@ -45,11 +45,11 @@
                   <div class="row">
 
                     <div class="col-12 col-lg-12 col-md-12 col-sm-12">
-                      <input type="radio" id="motchieu" name="loaiBay" value=""/>
+                      <input type="radio" id="motchieu" checked name="bookingFlightType" value="oneWayTicket"/>
                       <label class="" for="motchieu">
                         Một chiều
                       </label>
-                      <input type="radio" id="khuhoi" name="loaiBay" value="" />
+                      <input type="radio" id="khuhoi" name="bookingFlightType" value="returnTicket" />
                       <label class="" for="khuhoi">
                         Khứ hồi
                       </label>
@@ -61,22 +61,26 @@
                       <div class="form-group" style="display: inline-block;">
                         <label for="">Điểm khởi hành</label>
                         <i class="fas fa-plane-departure text-warning"></i>
-                        <select class="custom-select" style="display: inline-block; width:100px;">
-                          <option selected>Open this select menu</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                        <select name="bookingFrom" class="custom-select" style="display: inline-block; width:100px;">
+                          <option value = "null" selected>Open this select menu</option>
+                          <%if(typeof airPort === 'object'){%>
+                            <%for(item of airPort){%>
+                              <option value = "<%=item.locationCode%>"><%=item.locationName%></option>
+                            <%}%>
+                          <%}%>
                         </select>
                       </div>
                       &nbsp;
                       <div class="form-group" style="display: inline-block">
                         <label for="">Điểm đến</label>
                         <i class="fas fa-plane-arrival text-warning"></i>
-                        <select class="custom-select" style="display: inline-block; width:100px;">
+                        <select name="bookingDestination" class="custom-select" style="display: inline-block; width:100px;">
                           <option selected>Open this select menu</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <%if(typeof airPort === 'object'){%>
+                            <%for(item of airPort){%>
+                              <option value = "<%=item.locationCode%>"><%=item.locationName%></option>
+                            <%}%>
+                          <%}%>
                         </select>
                       </div>
 
@@ -86,7 +90,7 @@
                           <div class="form-group">
                             <label for="dtp_input2" style="padding: 0">Thời gian khởi hành</label>
                             <div class="input-group date form_date col-md-10" style="padding: 0" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                              <input class="form-control" size="12" type="text" value="" readonly>
+                              <input class="form-control" size="12" type="text" value="" name="bookingDepartTime" readonly>
                               &nbsp;
                               <!-- <span class="input-group-addon"><span class="glyphicon fas fa-times" style="font-size: 48px;"></span></span>-->
                               <span class="input-group-addon"><span class="glyphicon fas fa-calendar text-warning" style="font-size: 48px;"></span></span>
@@ -100,7 +104,7 @@
                           <div class="form-group timeKhuHoi" style="display: none">
                             <label for="dtp_input2" style="padding: 0">Thời gian quay về</label>
                             <div class="input-group date form_date col-md-10" style="padding: 0" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
-                              <input class="form-control" size="12" type="text" value="" readonly>
+                              <input class="form-control" size="12" type="text" value="" name="bookingReturnTime" readonly>
                               &nbsp;
                               <!-- <span class="input-group-addon"><span class="glyphicon fas fa-times" style="font-size: 48px;"></span></span>-->
                               <span class="input-group-addon"><span class="glyphicon fas fa-calendar text-warning" style="font-size: 48px;"></span></span>
@@ -126,11 +130,13 @@
 
                       <div class="form-group">
                         <label for="">Hạng ghế :</label>
-                        <select class="custom-select" style="display: inline-block; width:200px;">
+                        <select name="bookingSeatClass"class="custom-select" style="display: inline-block; width:200px;">
                           <option selected>Open this select menu</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
+                          <%if(typeof seatType === 'object'){%>
+                            <%for(item of seatType){%>
+                              <option value = "<%=item.locationCode%>"><%=item.name%></option>
+                            <%}%>
+                          <%}%>
                         </select>
                       </div>
 
