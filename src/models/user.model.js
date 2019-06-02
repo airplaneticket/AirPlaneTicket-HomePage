@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-let saltRound = 10;
+let saltRound = process.env.SALT_ROUND || 10;
 let usersSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -29,6 +29,9 @@ let usersSchema = new mongoose.Schema({
     },
     address: {
         type: String
+    },
+    age: {
+        type: Number
     },
     active: {
         type: Boolean,

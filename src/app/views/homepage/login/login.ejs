@@ -120,7 +120,9 @@
 	<!-- cd-overlay-content -->
 
 	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
-
+	<%if(typeof notify === 'string'){%>
+	<%include ../../partials/common/notification.ejs%>
+	<%}%>
 	<!-- BASE JS -->
     <%include ../../include/auth/js.ejs%>
 

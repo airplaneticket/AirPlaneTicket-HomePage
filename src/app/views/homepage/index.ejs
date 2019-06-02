@@ -310,7 +310,9 @@
         </div>
       </div>
     </section>
-
+<%if(typeof notify === 'string'){%>
+	<%include ../partials/common/notification.ejs%>
+	<%}%>
     <%-include ../partials/common/footer%>
     <!-- End footer-->
 
@@ -338,7 +340,7 @@
         />
       </svg>
     </div>
-    
+
 	  <!-- BASE JS -->
     <%-include ../include/homepage/js.ejs%>
 

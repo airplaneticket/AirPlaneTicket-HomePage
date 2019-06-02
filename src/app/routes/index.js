@@ -4,9 +4,9 @@ module.exports = routes => {
     routes.use('/', require('./homepage/index'));
     routes.use('/login', require('./login/login.routes'));
     routes.use('/register', require('./register/register.routes'));
-    routes.use('/', require('./booking/index'));
+    routes.use('/booking', require('./booking/booking.routes'));
     routes.use(pageMiddleware.requireLogin);
-    routes.use('/', require('./profile/index'));
+    routes.use('/profile', require('./profile/profile.routes'));
 
     routes.use((req, res) => {
         res.status(404);
