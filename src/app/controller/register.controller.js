@@ -18,19 +18,13 @@ module.exports.postRegister = async(req, res) => {
         let newUser = new userModel(req.inputData);
         let verifyUser = new verifyUserModel();
         let password = newUser.password;
-        newUser.hashPassword()
-            .then(() => {
-                newUser.save();
-                verifyUser.input(newUser._id)
-                verifyUser.save();
-                emailService.sendMailVerify(newUser.email, verifyUser.hash, password, res);
-                res.render('homepage/index.ejs', {
-                    notify: 'Vui lòng kiểm tra email để kích hoạt tài khoản!'
-                }); // them layout hien thong bao
-            })
-            .catch((err) => {
-                console.log(err);
-            });
+        newUser.save();
+        verifyUser.input(newUser._id)
+        verifyUser.save();
+        emailService.sendMailVerify(newUser.email, verifyUser.hash, password, res);
+        res.render('homepage/index.ejs', {
+            notify: 'Vui lòng kiểm tra email để kích hoạt tài khoản!'
+        });
     } catch (err) {
         console.log(err);
         res.status(400);

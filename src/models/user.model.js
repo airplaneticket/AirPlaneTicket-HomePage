@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-let saltRound = process.env.SALT_ROUND || 10;
+let saltRound = 10;
 let usersSchema = new mongoose.Schema({
     email: {
         type: String,
@@ -43,12 +43,21 @@ let usersSchema = new mongoose.Schema({
     }
 });
 
-usersSchema.methods.hashPassword = async function() {
-    return bcrypt.hash(this.password, saltRound)
+usersSchema.pre('save', function(next) {
+    let user = this;
+    if (!user.isModified('password'))
+        return next();
+    bcrypt.hash(this.password, saltRound)
         .then((hash) => {
             this.password = hash;
+            next();
         });
-}
+});
+
+usersSchema.pre('update', function(next) {
+    let user = this;
+    console.log(this.password);
+});
 
 usersSchema.methods.isRightPassword = async function(password) {
     return bcrypt.compare(password, this.password);

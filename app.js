@@ -7,7 +7,7 @@ const expressSession = require('express-session');
 const path = require('path');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useFindAndModify: false });
 
 const app = express();
 const session = expressSession({
