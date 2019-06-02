@@ -7,6 +7,7 @@ module.exports = routes => {
     routes.use(pageMiddleware.requireLogin);
     routes.use('/', require('./profile/index'));
     routes.use('/', require('./booking/index'));
+    routes.use('/', require('./payment/index'));
     routes.use((req, res) => {
         res.status(404);
         res.send('404 ERROR');
