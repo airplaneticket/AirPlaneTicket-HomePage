@@ -2,6 +2,7 @@ const userModel = require('../../models/user.model');
 const verifyUserModel = require('../../models/verifyUser.model');
 
 module.exports.postRegister = async(req, res, next) => {
+
     let user = await userModel.findOne({ email: req.body.registerEmail });
     if (user) {
         res.render('homepage/register/register.ejs', {
@@ -9,7 +10,7 @@ module.exports.postRegister = async(req, res, next) => {
         });
         console.log('email existed notify'); // them layout hien thong bao
     }
-    if (inputData.password.length < 8) {
+    if (req.body.registerPassword.length < 8) {
         res.render('homepage/register/register.ejs');
         console.log('wrong password notify', {
             error: 'Mật khẩu phải nhiều hơn 8 kí tự'
