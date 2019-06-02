@@ -5,8 +5,8 @@ let flightSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    airlineName: {
-        type: String,
+    airlineInfor: {
+        type: Object,
         required: true
     },
     from: {
