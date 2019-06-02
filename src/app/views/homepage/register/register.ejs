@@ -37,6 +37,7 @@
 	<main>
 		<div id="form_container">
 			<div class="row">
+
 				<div class="col-lg-5">
 					<div id="left_form">
 						<figure><img src="homepage/images/registration_bg.svg" alt=""></figure>
@@ -45,7 +46,10 @@
 						<a href="#0" id="more_info" data-toggle="modal" data-target="#more-info"><i class="pe-7s-info"></i></a>
 					</div>
 				</div>
+				<!-- End col-->
+
 				<div class="col-lg-7">
+
 					<div id="wizard_container">
 						<div id="top-wizard">
 							<div id="progressbar"></div>
@@ -53,10 +57,11 @@
 						<!-- /top-wizard -->
 						<form action="/register" method="POST">
 							<input id="website" name="website" type="text" value="">
-							<!-- Leave for security protection, read docs for details -->
+							
 							<div id="middle-wizard">
 								<div class="step">
 									<h3 class="main_question"><strong>1/2</strong>Thông tin cá nhân</h3>
+
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
@@ -99,6 +104,7 @@
 										</div>
 									</div>
 									<!-- /row -->
+
 								</div>
 								<!-- /step-->
 
@@ -137,19 +143,30 @@
 								<!-- /step-->
 							</div>
 							<!-- /middle-wizard -->
+
 							<div id="bottom-wizard">
 								<button type="button" name="backward" class="backward">Quay lại</button>
 								<button type="button" name="forward" class="forward">Tiếp theo</button>
 								<button type="submit" name="process" class="submit">Đăng kí</button>
 							</div>
 							<!-- /bottom-wizard -->
+
 						</form>
 					</div>
 					<!-- /Wizard container -->
+
 				</div>
-			</div><!-- /Row -->
-		</div><!-- /Form_container -->
+				<!-- End col-->
+
+			</div>
+			<!-- End row -->
+
+		</div>
+		<!-- End form_container -->
+
 	</main>
+	<!-- End main-->
+
 	<footer id="home" class="clearfix">
 		<p>© 2019 P/D</p>
 		<ul>
@@ -158,7 +175,10 @@
 			<li><a href="#" class="animated_link">FeedBack</a></li>
 		</ul>
 	</footer>
-	<!-- end footer-->
+	<!-- End footer-->
+
+	<%include ../../partials/common/notification.ejs%>
+	<!-- End notification -->
 
 	<div class="cd-overlay-nav">
 		<span></span>

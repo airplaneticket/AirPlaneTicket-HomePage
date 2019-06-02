@@ -17,7 +17,7 @@
 	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
 
 	<!-- BASE CSS -->
-    <%include ../../include/auth/css.ejs%>
+  <%include ../../include/auth/css.ejs%>
 
 </head>
 
@@ -25,32 +25,48 @@
 
 	<div id="preloader">
 		<div data-loader="circle-side"></div>
-	</div><!-- /Preload -->
+	</div>
+  <!-- End preload -->
 
 	<div id="loader_form">
 		<div data-loader="circle-side-2"></div>
-	</div><!-- /loader_form -->
+	</div>
+  <!-- End loader_form -->
 
-    <%include ../../partials/common/header-auth.ejs%>
+  <%include ../../partials/common/header-auth.ejs%>
+  <!-- End header -->
 
   <section>
     <div class="col-12 flight-list">
       <div class="container">
+
         <div class="row">
           <h2 class="col-12 text-center">Danh sách các chuyến bay</h2>
         </div>
+        <!-- End row -->
+
         <hr/>
+
         <div class="row">
+
           <div class="col-lg-10">
               <p class="margin-0">Thứ 2, 30 tháng 6 2019</p>
               <p class="margin-0">1 người  &nbsp;|&nbsp;  Phổ thông</p>
           </div>
+          <!-- End col -->
+
           <div class="col-lg-2">
             <button type="button" class="btn btn-primary">Đổi tìm kiếm</button>
           </div>
+          <!-- End col -->
+
         </div>
+        <!-- End row -->
+
         <hr/>
+
         <div class="row">
+
             <div id="item1" class="flight-item">
               <div class="flight-info">
                 <div class="flight-info-col" style="width: 180px">
@@ -156,10 +172,16 @@
                 </div>
               </div>
             </div>
+            <!-- Airticket item -->        
+        
+
         </div>
+        <!-- End row -->
+
       </div>
     </div>
   </section>
+  <!-- End flight list -->
 
 	<div class="cd-overlay-nav">
 		<span></span>
@@ -173,8 +195,8 @@
 
 	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
 
-
-    <%include ../../include/auth/js.ejs%>
+	<!-- BASE JS -->
+  <%include ../../include/auth/js.ejs%>
 
 </body>
 </html>

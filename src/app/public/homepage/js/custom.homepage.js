@@ -9,6 +9,8 @@ jQuery(document).ready(function($){
 		minView: 2,
 		forceParse: 0
     });
+
+    $('#motchieu').attr('checked',true);
     var isChecked = $('#khuhoi').is(':checked')
     $('#khuhoi').on('change', function() {
         $('.timeKhuHoi').css('display','inline');
