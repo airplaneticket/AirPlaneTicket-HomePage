@@ -4,6 +4,8 @@ const bookingController = require('../../controller/booking.controller')
 
 const router = express.Router();
 
-router.get('/booking', bookingController.getBooking);
+router.get('/', bookingController.getBooking);
+
+router.post('/', bookingController.postBooking);
 
 module.exports = router;

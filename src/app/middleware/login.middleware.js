@@ -10,7 +10,7 @@ module.exports.postLogin = async(req, res, next) => {
         if (!user) {
             res.render('homepage/login/login.ejs', {
                 inputData: inputData,
-                error: "Email này chưa được đăng kí"
+                notify: "Email này chưa được đăng kí"
             });
             return;
         }
@@ -23,13 +23,13 @@ module.exports.postLogin = async(req, res, next) => {
                     } else {
                         res.render('homepage/login/login.ejs', {
                             inputData: inputData,
-                            error: "Tài khoản chưa được kích hoạt. Kiểm tra mail để kích hoạt tài khoản"
+                            notify: "Tài khoản chưa được kích hoạt. Kiểm tra mail để kích hoạt tài khoản"
                         });
                     }
                 } else {
                     res.render('homepage/login/login.ejs', {
                         inputData: inputData,
-                        error: 'Sai mật khẩu'
+                        notify: 'Sai mật khẩu'
                     });
                     return;
                 }

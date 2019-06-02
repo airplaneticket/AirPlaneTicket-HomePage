@@ -32,29 +32,29 @@
 	</div><!-- /loader_form -->
 
     <%include ../../partials/common/header-auth.ejs%>
-
+    <%if(typeof user === 'object'){%>
   <section>
     <div class="col-12 flight-list">
       <div class="container">
         <div class="row">
-          <h2 class="col-12 text-center">Tài khoản</h2> 
+        <h2 class="col-12 text-center">Tài khoản</h2>
         </div>
         <hr/>
 			<div class="row">
 				<div class="col-lg-12">
-                    <form action="/proifle" method="POST">
+                    <form action="/profile" method="POST">
                         <div class="row">
                             <div class="col-lg-6">
                                 <h3 class="main_question"><i class="fas fa-address-book"></i>&nbsp;     Thông tin cá nhân</h3>
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <i class="fas fa-info"></i><input type="text" name="registerFullname" class="form-control required" placeholder="Họ và tên">
+                                            <i class="fas fa-info"></i><input type="text" name="profileFullname" class="form-control required" placeholder="Họ và tên" value = "<%-user.fullname%>">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <i class="fas fa-id-card-alt"></i><input type="number" name="registerIdentityNumber" class="form-control required" placeholder="CMND">
+                                            <i class="fas fa-id-card-alt"></i><input type="number" name="profileIdentityNumber" class="form-control required" placeholder="CMND" value="<%-user.identityNumber%>">
                                         </div>
                                     </div>
                                 </div>
@@ -63,27 +63,27 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" name="registerAddress" class="form-control required" placeholder="Tuổi">
+                                            <input type="text" name="profileAge" class="form-control required" placeholder="Tuổi" value="<%-user.age%>">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group radio_input">
-                                            <label><input type="radio" value="Male" checked name="registerRender" class="icheck">Nam</label>
-                                            <label><input type="radio" value="Female" name="registerRender" class="icheck">Nữ</label>
+                                            <label><input type="radio" value="Male" name="profileGender" class="icheck" <%if(user.gender==='Male'){%>checked<%}%>>Nam</label>
+                                            <label><input type="radio" value="Female" name="profileGender" class="icheck" <%if(user.gender==='Female'){%>checked<%}%>>Nữ</label>
                                         </div>
                                     </div>
-                                </div>  
+                                </div>
                                 <!-- /row -->
 
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <i class="fas fa-map-marker-alt"></i><input type="text" name="registerAddress" class="form-control required" placeholder="Địa chỉ">
+                                            <i class="fas fa-map-marker-alt"></i><input type="text" name="profileAddress" class="form-control required" placeholder="Địa chỉ" value = "<%-user.address%>">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <i class="fas fa-mobile-alt"></i><input type="number" name="registerPhone" class="form-control" placeholder="Số điện thoại">
+                                            <i class="fas fa-mobile-alt"></i><input type="number" name="profilePhone" class="form-control" placeholder="Số điện thoại" value = "<%-user.phone%>">
                                         </div>
                                     </div>
                                 </div>
@@ -94,7 +94,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <i class="fas fa-at"></i><input type="email" name="registerEmail" class="form-control required" placeholder="Email">
+                                            <i class="fas fa-at"></i><input type="email" name="profileEmail" class="form-control required" placeholder="Email" value = "<%-user.email%>" readonly>
                                         </div>
 
                                     </div>
@@ -104,7 +104,7 @@
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <i class="fas fa-key"></i><input type="password" name="registerPassword" class="form-control required" placeholder="Mật khẩu">
+                                            <i class="fas fa-key"></i><input type="password" name="profilePassword" class="form-control required" placeholder="Mật khẩu">
                                         </div>
                                     </div>
                                     <!-- /col-sm-12 -->
@@ -112,7 +112,7 @@
                             </div>
                             <div class="col-lg-12 ">
                                 <div class="clearfix">
-                                    <button type="button" class="btn btn-primary float-right">Cập nhật</button>
+                                    <button type="submit" class="btn btn-primary float-right">Cập nhật</button>
                                 </div>
                             </div>
                         </div>
@@ -121,8 +121,8 @@
 			</div><!-- /Row -->
 		</div><!-- /Form_container -->
     </div>
-  </section>
-
+</section>
+<%}%>
 	<div class="cd-overlay-nav">
 		<span></span>
 	</div>
@@ -135,7 +135,9 @@
 
 	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
 
-
+    <%if(typeof notify === 'string'){%>
+	<%include ../../partials/common/notification.ejs%>
+	<%}%>
     <%include ../../include/auth/js.ejs%>
 
 </body>
