@@ -7,10 +7,16 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
+
+	  <!-- BASE CSS -->
     <%-include ../include/homepage/css.ejs%>
+
   </head>
   <body>
+
     <%-include ../partials/common/header%>
+    <!-- End header-->
+
     <section class="hero-wrap js-fullheight" style="background-image: url('homepage/images/airplane_sky_flight_clouds_sunset_116695_3840x2400.jpg');background-position: center;" data-section="home">
       <div class="overlay"></div>
       <div class="container">
@@ -37,6 +43,7 @@
                 <hr />
                 <form>
                   <div class="row">
+
                     <div class="col-12 col-lg-12 col-md-12 col-sm-12">
                       <input type="radio" id="motchieu" name="loaiBay" value=""/>
                       <label class="" for="motchieu">
@@ -47,7 +54,10 @@
                         Khứ hồi
                       </label>
                     </div>
+                    <!-- End col -->
+
                     <div class="col-6 col-sm-12 col-md-12 col-lg-6">
+
                       <div class="form-group" style="display: inline-block;">
                         <label for="">Điểm khởi hành</label>
                         <i class="fas fa-plane-departure text-warning"></i>
@@ -69,7 +79,9 @@
                           <option value="3">Three</option>
                         </select>
                       </div>
+
                       <div class="row">
+
                         <div class="col">
                           <div class="form-group">
                             <label for="dtp_input2" style="padding: 0">Thời gian khởi hành</label>
@@ -82,6 +94,8 @@
                             <input type="hidden" id="dtp_input2" value="" /><br/>
                           </div>
                         </div>
+                        <!-- End col -->
+
                         <div class="col">
                           <div class="form-group timeKhuHoi" style="display: none">
                             <label for="dtp_input2" style="padding: 0">Thời gian quay về</label>
@@ -94,19 +108,22 @@
                             <input type="hidden" id="dtp_input2" value="" /><br/>
                           </div>
                         </div>
+                        <!-- End col -->
+
                       </div>
+                      <!-- End row -->
+
                     </div>
+                    <!-- End col -->
+
                     <div class="col-6 col-sm-12 col-md-12 col-lg-6">
+
                       <div class="form-group">
-                        <label for="">Số lượng khách hàng :</label>
+                        <label for="">Số lượng khách hàng</label>
                         <i class="fas fa-users text-warning"></i>
-                        <select class="custom-select" style="display: inline-block; width:200px;">
-                          <option selected>Open this select menu</option>
-                          <option value="1">One</option>
-                          <option value="2">Two</option>
-                          <option value="3">Three</option>
-                        </select>
+                        <input type="number" class="form-control" style="display: inline-block; height: auto !important; width: 10rem" id="" placeholder="Số lượng"/>
                       </div>
+
                       <div class="form-group">
                         <label for="">Hạng ghế :</label>
                         <select class="custom-select" style="display: inline-block; width:200px;">
@@ -116,12 +133,17 @@
                           <option value="3">Three</option>
                         </select>
                       </div>
+
                       <div class="form-group">
                         <div class="icon"><span class="flaticon-seats"></span></div>
                         <button type="button" class="mt-3 btn btn-outline-primary float-right"><i class="fas fa-search">&nbsp; Tìm chuyến bay</i></button>
                       </div>
+
                     </div>
+                    <!-- End col -->
+
                   </div>
+                  <!-- End row -->
                 </form>
               </div>
             </div>
@@ -284,6 +306,7 @@
     </section>
 
     <%-include ../partials/common/footer%>
+    <!-- End footer-->
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen">
@@ -309,7 +332,9 @@
         />
       </svg>
     </div>
-
+    
+	  <!-- BASE JS -->
     <%-include ../include/homepage/js.ejs%>
+
   </body>
 </html>
