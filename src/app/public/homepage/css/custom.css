@@ -2,7 +2,11 @@
 .margin-0 {
     margin: 0 !important;
 }
-/*Custom*/
+.pos-relative {
+    position: initial !important;
+}
+
+/* Flight */
 .flight-list {
     display: block;
     width: 960px;
@@ -97,7 +101,10 @@
 .flight-pay-button:hover {
     background-color: #fb8b34;
 }
-
+.flight-detail-btn-active {
+    border-bottom : 2px solid #0770cd;
+    padding-bottom: 0px;
+}
 .flight-detail-btn {
     display: inline-block;
     vertical-align: top;
@@ -181,6 +188,7 @@
     width: 100%;
     min-height: 150px;
     margin-bottom: -50px;
+    position: relative;
 }
 .top-detail {
     width: 100%;
@@ -234,7 +242,7 @@
 }
 .middle-info {
     width: 100%;
-    padding: .5rem 0rem 0rem 1.5rem;
+    padding: .5rem 0rem 0.5rem 1.5rem;
 }
 .info-img {
     display: inline-block;
@@ -250,7 +258,6 @@
     display: inline-block;
     margin: 1rem 1.5rem 0 0;
     font-size: 20px
-
 }
 
 /* Right detail */
@@ -291,6 +298,16 @@
     background-color: #f96d01;
     cursor: pointer;
 }
+
+/* Search */
+.search-container {
+    width: 100%;
+    margin-top: 1rem;
+    border: 1px solid #dedede;
+    border-radius: 3px; 
+    padding: 20px 10px 0
+}
+
 
 /* -------------*/
 .form_size {
