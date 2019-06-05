@@ -30,6 +30,9 @@ let usersSchema = new mongoose.Schema({
     address: {
         type: String
     },
+    age: {
+        type: Number
+    },
     active: {
         type: Boolean,
         default: false
@@ -40,12 +43,21 @@ let usersSchema = new mongoose.Schema({
     }
 });
 
-usersSchema.methods.hashPassword = async function() {
-    return bcrypt.hash(this.password, saltRound)
+usersSchema.pre('save', function(next) {
+    let user = this;
+    if (!user.isModified('password'))
+        return next();
+    bcrypt.hash(this.password, saltRound)
         .then((hash) => {
             this.password = hash;
+            next();
         });
-}
+});
+
+usersSchema.pre('update', function(next) {
+    let user = this;
+    console.log(this.password);
+});
 
 usersSchema.methods.isRightPassword = async function(password) {
     return bcrypt.compare(password, this.password);
