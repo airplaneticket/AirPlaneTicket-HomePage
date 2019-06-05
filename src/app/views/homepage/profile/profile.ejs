@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="P/D | Chuyến bay">
+	<meta name="author" content="Airplane-Ticket">
+	<title>P/D | Chuyến bay</title>
+
+	<!-- Favicons-->
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
+	<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+
+	<!-- BASE CSS -->
+    <%include ../../include/auth/css.ejs%>
+
+</head>
+
+<body style="background: none">
+
+	<div id="preloader">
+		<div data-loader="circle-side"></div>
+	</div><!-- /Preload -->
+
+	<div id="loader_form">
+		<div data-loader="circle-side-2"></div>
+	</div><!-- /loader_form -->
+
+    <%include ../../partials/common/header-auth.ejs%>
+    <%if(typeof user === 'object'){%>
+  <section>
+    <div class="col-12 flight-list">
+      <div class="container">
+        <div class="row">
+        <h2 class="col-12 text-center">Tài khoản</h2>
+        </div>
+        <hr/>
+			<div class="row">
+				<div class="col-lg-12">
+                    <form action="/profile" method="POST">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h3 class="main_question"><i class="fas fa-address-book"></i>&nbsp;     Thông tin cá nhân</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <i class="fas fa-info"></i><input type="text" name="profileFullname" class="form-control required" placeholder="Họ và tên" value = "<%-user.fullname%>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <i class="fas fa-id-card-alt"></i><input type="number" name="profileIdentityNumber" class="form-control required" placeholder="CMND" value="<%-user.identityNumber%>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /row -->
+
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" name="profileAge" class="form-control required" placeholder="Tuổi" value="<%-user.age%>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group radio_input">
+                                            <label><input type="radio" value="Male" name="profileGender" class="icheck" <%if(user.gender==='Male'){%>checked<%}%>>Nam</label>
+                                            <label><input type="radio" value="Female" name="profileGender" class="icheck" <%if(user.gender==='Female'){%>checked<%}%>>Nữ</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /row -->
+
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <i class="fas fa-map-marker-alt"></i><input type="text" name="profileAddress" class="form-control required" placeholder="Địa chỉ" value = "<%-user.address%>">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <i class="fas fa-mobile-alt"></i><input type="number" name="profilePhone" class="form-control" placeholder="Số điện thoại" value = "<%-user.phone%>">
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /row -->
+                            </div>
+                            <div class="col-lg-6">
+                                <h3 class="main_question"><i class="fas fa-user-lock"></i>&nbsp; Thông tin đăng nhập</h3>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <i class="fas fa-at"></i><input type="email" name="profileEmail" class="form-control required" placeholder="Email" value = "<%-user.email%>" readonly>
+                                        </div>
+
+                                    </div>
+                                    <!-- /col-sm-12 -->
+                                </div>
+                                <!-- /row -->
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <i class="fas fa-key"></i><input type="password" name="profilePassword" class="form-control required" placeholder="Mật khẩu">
+                                        </div>
+                                    </div>
+                                    <!-- /col-sm-12 -->
+                                </div>
+                            </div>
+                            <div class="col-lg-12 ">
+                                <div class="clearfix">
+                                    <button type="submit" class="btn btn-primary float-right">Cập nhật</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+				</div>
+			</div><!-- /Row -->
+		</div><!-- /Form_container -->
+    </div>
+</section>
+<%}%>
+	<div class="cd-overlay-nav">
+		<span></span>
+	</div>
+	<!-- cd-overlay-nav -->
+
+	<div class="cd-overlay-content">
+		<span></span>
+	</div>
+	<!-- cd-overlay-content -->
+
+	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+
+    <%if(typeof notify === 'string'){%>
+	<%include ../../partials/common/notification.ejs%>
+	<%}%>
+    <%include ../../include/auth/js.ejs%>
+
+</body>
+</html>

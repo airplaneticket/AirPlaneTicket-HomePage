@@ -4,7 +4,9 @@
     <div class="modal-content">
         <div class="modal-body text-center">
         <i class="fas fa-check-circle text-success" style="font-size: 48px"></i>
-        <p>Vui lòng kiểm tra Email để xác thực tài khoản</p>
+        <%if(typeof notify === 'string'){%>
+        <p><%-notify%></p>
+        <%}%>
         </div>
     </div>
     </div>

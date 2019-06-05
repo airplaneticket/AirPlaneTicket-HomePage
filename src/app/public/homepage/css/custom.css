@@ -1,8 +1,12 @@
 /*Custom*/
+
 .margin-0 {
     margin: 0 !important;
 }
+
+
 /*Custom*/
+
 .flight-list {
     display: block;
     width: 960px;
@@ -11,6 +15,7 @@
     padding-bottom: 20px;
     padding-top: 50px;
 }
+
 .flight-item {
     width: 960px;
     min-height: 124px;
@@ -25,9 +30,11 @@
     transition: all .3s ease;
     background-color: #fff;
 }
+
 .flight-item:hover {
     border: 1px solid #0099ff;
 }
+
 .flight-info {
     min-height: 105px;
     padding: 15px 30px 0;
@@ -36,30 +43,37 @@
     width: 100%;
     position: relative;
 }
+
 .flight-info-col {
     display: inline-block;
     float: left;
     padding-top: 1rem;
 }
+
 .flight-info-col span {
     font-size: 20px;
 }
+
 .flight-img {
     max-width: 150px;
     display: inline;
 }
+
 .flight-img img {
     height: auto;
     width: 15%;
 }
+
 .flight-info-time {
-    width:100%;
+    width: 100%;
     position: relative;
 }
+
 .flight-info-time {
     width: 100px;
     position: relative;
 }
+
 .flight-info-time strong {
     font-size: 20px;
 }
@@ -69,21 +83,25 @@
     vertical-align: middle;
     float: left;
 }
+
 .flight-icon-svg {
     vertical-align: middle;
     margin: 0 40px 0 10px;
     height: 13px;
     width: 30px;
 }
+
 .flight-pay {
     min-width: 120px;
     padding-top: 1rem;
 }
+
 .flight-pay span {
     font-weight: 700;
     font-size: 18px;
     color: #fa6d01;
 }
+
 .flight-pay-button {
     font-size: 14px;
     line-height: 14px;
@@ -94,6 +112,7 @@
     background-color: #f96d01;
     color: #fff;
 }
+
 .flight-pay-button:hover {
     background-color: #fb8b34;
 }
@@ -105,6 +124,7 @@
     box-sizing: border-box;
     padding-bottom: 1rem;
 }
+
 .flight-detail-btn strong {
     cursor: pointer;
     display: inline-block;
@@ -114,10 +134,14 @@
     text-decoration: none;
     transition: all .3s ease;
 }
+
 .active {
     border-bottom: 1px solid #0099ff;
 }
+
+
 /*Flight-detail*/
+
 .flight-detail {
     position: relative;
     clear: both;
@@ -125,6 +149,7 @@
     box-sizing: border-box;
     display: block;
 }
+
 .flight-detail-info {
     min-height: 105px;
     padding: 15px 30px;
@@ -134,6 +159,7 @@
     width: 100%;
     position: relative;
 }
+
 .active {
     display: inline-block;
 }
@@ -144,31 +170,39 @@
 .flight-detail-time {
     width: 100%;
 }
+
 .flight-detail-departure {
     width: 350px;
 }
+
 .flight-time-departure {
     display: inline-block;
     margin-right: 1rem;
 }
+
 .flight-detail-img img {
     height: auto;
     width: 20%;
 }
+
 .flight-detail-icon {
     width: 100px;
     margin-left: 16px;
 }
+
 .flight-detail-icon p {
     display: inline-block;
 }
+
 .flight-detail-icon p span {
     font-size: 15px;
 }
-.flight-airplane-detail p{
+
+.flight-airplane-detail p {
     padding: 0 !important;
     margin-bottom: .5rem !important;
 }
+
 /* -- Pay ment -- */
 .container-payment {
     width: 960px;
@@ -289,8 +323,8 @@
     background-color: #f96d01;
     cursor: pointer;
 }
-
 /* -------------*/
+
 .form_size {
     width: 26rem !important;
     min-height: 20rem !important;
@@ -298,6 +332,7 @@
     border-radius: 8px;
     border: 1px solid #dadce0;
 }
+
 .auth_footer {
     list-style: none;
     text-decoration: none;
@@ -309,6 +344,7 @@
     text-decoration-color: black;
     text-decoration: none;
 }
+
 .auth_footer li a {
     font-size: 14px;
     margin-right: .5rem;
@@ -323,9 +359,148 @@
     }
 }
 
-@media (max-width: 320px) { 
+@media (max-width: 320px) {
     .btn_login {
         margin-top: 1vh;
         float: none !important;
     }
+}
+
+
+/* -- Pay ment -- */
+
+.container-payment {
+    width: 960px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.bg-payment {
+    background-color: #fb8b34;
+    width: 100%;
+    min-height: 150px;
+    margin-bottom: -50px;
+}
+
+.top-detail {
+    width: 100%;
+    min-height: 110px;
+    margin: 0 auto;
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: rgba(3, 18, 26, 0.15) 0px 2px 5px;
+}
+
+.top-info {
+    padding: .5rem 1rem;
+}
+
+.middle-detail {
+    margin: 2rem 0;
+    width: 100%;
+    min-height: 300px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: rgba(3, 18, 26, 0.15) 0px 2px 5px;
+    position: relative;
+}
+
+.top-md-detail {
+    width: 100%;
+    height: 60px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: .5rem 0rem 0rem 0.5rem;
+    border-bottom: 1px solid #ededed;
+}
+
+.top-md-title {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.top-md-title span {
+    padding-bottom: 1rem;
+}
+
+.top-md-icon {
+    display: inline-block;
+    margin-right: 12px;
+    vertical-align: middle;
+    text-align: center;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+}
+
+.middle-info {
+    width: 100%;
+    padding: .5rem 0rem 0rem 1.5rem;
+}
+
+.info-img {
+    display: inline-block;
+    border-radius: 4px;
+    vertical-align: top;
+    width: 44px;
+    height: 44px;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat;
+}
+
+.info-airplane {
+    display: inline-block;
+    margin: 1rem 1.5rem 0 0;
+    font-size: 20px
+}
+
+
+/* Right detail */
+
+.right-detail {
+    margin: 2rem 0;
+    width: 100%;
+    min-height: 200px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: rgba(3, 18, 26, 0.15) 0px 2px 5px;
+    position: relative;
+}
+
+.total-price {
+    width: 100%;
+    min-height: 50px;
+    background-color: #f6f6f6;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+/* Bottom detail */
+
+.bottom-detail {
+    width: 100%;
+    min-height: 50px;
+    background-color: #fb8b34;
+}
+
+.bottom-detail p {
+    font-size: 20px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.bottom-detail:hover {
+    background-color: #f96d01;
+    cursor: pointer;
 }

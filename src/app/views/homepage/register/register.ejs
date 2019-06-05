@@ -57,7 +57,7 @@
 						<!-- /top-wizard -->
 						<form action="/register" method="POST">
 							<input id="website" name="website" type="text" value="">
-							
+
 							<div id="middle-wizard">
 								<div class="step">
 									<h3 class="main_question"><strong>1/2</strong>Thông tin cá nhân</h3>
@@ -65,26 +65,14 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="text" name="registerFullname" class="form-control required" placeholder="Họ và tên">
+												<input type="text" name="registerFullname" class="form-control required" placeholder="Họ và tên"
+												<%if(typeof inputData === 'object'){%> value = "<%-inputData.fullname%>"<%}%> >
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="number" name="registerIdentityNumber" class="form-control required" placeholder="CMND">
-											</div>
-										</div>
-									</div>
-									<!-- /row -->
-
-									<div class="row">
-										<div class="col-md-6">
-											<div class="form-group">
-												<input type="text" name="registerAddress" class="form-control required" placeholder="Địa chỉ">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<input type="number" name="registerPhone" class="form-control" placeholder="Số điện thoại">
+												<input type="number" name="registerIdentityNumber" class="form-control required" placeholder="CMND"
+												<%if(typeof inputData === 'object'){%> value = "<%-inputData.identityNumber%>"<%}%> >
 											</div>
 										</div>
 									</div>
@@ -93,13 +81,32 @@
 									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<input type="number" name="age" class="form-control" placeholder="Tuổi">
+												<input type="text" name="registerAddress" class="form-control required" placeholder="Địa chỉ"
+												<%if(typeof inputData === 'object'){%> value = "<%-inputData.address%>"<%}%> >
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<input type="number" name="registerPhone" class="form-control" placeholder="Số điện thoại"
+												<%if(typeof inputData === 'object'){%> value = "<%-inputData.phone%>"<%}%> >
+											</div>
+										</div>
+									</div>
+									<!-- /row -->
+
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group">
+												<input type="number" name="registerAge" class="form-control" placeholder="Tuổi"
+												<%if(typeof inputData === 'object'){%> value = "<%-inputData.age%>"<%}%> >
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group radio_input">
-												<label><input type="radio" value="Male" checked name="registerGender" class="icheck">Nam</label>
-												<label><input type="radio" value="Female" name="registerGender" class="icheck">Nữ</label>
+												<label><input type="radio" value="Male" checked name="registerGender" class="icheck"
+												<%if(typeof inputData === 'object'){%> <%if(inputData.gender==='Male'){%>checked<%}%><%}%> >Nam</label>
+												<label><input type="radio" value="Female" name="registerGender" class="icheck"
+												<%if(typeof inputData === 'object'){%> <%if(inputData.gender==='Female'){%>checked<%}%><%}%> >Nữ</label>
 											</div>
 										</div>
 									</div>
@@ -113,7 +120,8 @@
 									<div class="row">
 										<div class="col-md-12">
 											<div class="form-group">
-												<input type="email" name="registerEmail" class="form-control required" placeholder="Email">
+												<input type="email" name="registerEmail" class="form-control required" placeholder="Email"
+												<%if(typeof inputData === 'object'){%> value = "<%-inputData.email%>" <%}%> >
 											</div>
 
 										</div>
@@ -176,8 +184,9 @@
 		</ul>
 	</footer>
 	<!-- End footer-->
-
+	<%if(typeof notify === 'string'){%>
 	<%include ../../partials/common/notification.ejs%>
+	<%}%>
 	<!-- End notification -->
 
 	<div class="cd-overlay-nav">
