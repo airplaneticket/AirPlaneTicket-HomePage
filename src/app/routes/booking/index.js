@@ -4,6 +4,10 @@ const bookingController = require('../../controller/booking.controller')
 
 const router = express.Router();
 
-router.get('/booking', bookingController.getBooking);
+router.get('/bookingonesearch', bookingController.getBooking);
+
+router.get('/bookingtwosearch', (req,res) => {
+    res.render('homepage/booking/bookingTwoSearch.ejs')
+})
 
 module.exports = router;
