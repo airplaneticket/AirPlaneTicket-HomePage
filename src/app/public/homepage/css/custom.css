@@ -2,7 +2,14 @@
 .margin-0 {
     margin: 0 !important;
 }
-/*Custom*/
+.pos-relative {
+    position: initial !important;
+}
+.display-none {
+    display: none !important;
+}
+
+/* Flight */
 .flight-list {
     display: block;
     width: 960px;
@@ -11,8 +18,25 @@
     padding-bottom: 20px;
     padding-top: 50px;
 }
+.flight-logo{
+    display: block !important;
+    float: none !important;
+}
+.flight-luggage {
+    width: 100%;
+    float: none !important;
+    display: inline !important;
+}
+.flight-location {
+    font-size: 15px !important;
+}
+
+.flight-list-back {
+    
+}
+
 .flight-item {
-    width: 960px;
+    width: 100%;
     min-height: 124px;
     margin-bottom: 10px;
     position: relative;
@@ -28,9 +52,10 @@
 .flight-item:hover {
     border: 1px solid #0099ff;
 }
+
 .flight-info {
     min-height: 105px;
-    padding: 15px 30px 0;
+    padding: 15px 30px 10px;
     display: inline-block;
     clear: both;
     width: 100%;
@@ -44,6 +69,7 @@
 .flight-info-col span {
     font-size: 20px;
 }
+
 .flight-img {
     max-width: 150px;
     display: inline;
@@ -63,7 +89,7 @@
 .flight-info-time strong {
     font-size: 20px;
 }
-
+/*---Flight-icon----*/
 .flight-icon {
     display: inline-block;
     vertical-align: middle;
@@ -75,6 +101,8 @@
     height: 13px;
     width: 30px;
 }
+
+/*---Flight-pay----*/
 .flight-pay {
     min-width: 120px;
     padding-top: 1rem;
@@ -98,6 +126,11 @@
     background-color: #fb8b34;
 }
 
+/*---Flight-button*/
+.flight-detail-btn-active {
+    border-bottom : 2px solid #0770cd;
+    padding-bottom: 0px;
+}
 .flight-detail-btn {
     display: inline-block;
     vertical-align: top;
@@ -169,6 +202,22 @@
     padding: 0 !important;
     margin-bottom: .5rem !important;
 }
+<<<<<<< HEAD
+=======
+
+/*-------------------------------------------------*/
+/*----------------Flight two search----------------*/
+/*-------------------------------------------------*/
+/* .flight-list-back .flight-kind .flight-pay {
+    display: none;
+} */
+.flight-list-back {
+    z-index: 1;
+    opacity: .2;
+}
+
+
+>>>>>>> updateLayoutPayment
 /* -- Pay ment -- */
 .container-payment {
     width: 960px;
@@ -180,6 +229,7 @@
     width: 100%;
     min-height: 150px;
     margin-bottom: -50px;
+    position: relative;
 }
 .top-detail {
     width: 100%;
@@ -233,7 +283,7 @@
 }
 .middle-info {
     width: 100%;
-    padding: .5rem 0rem 0rem 1.5rem;
+    padding: .5rem 0rem 0.5rem 1.5rem;
 }
 .info-img {
     display: inline-block;
@@ -249,7 +299,6 @@
     display: inline-block;
     margin: 1rem 1.5rem 0 0;
     font-size: 20px
-
 }
 
 /* Right detail */
@@ -289,6 +338,16 @@
     background-color: #f96d01;
     cursor: pointer;
 }
+
+/* Search */
+.search-container {
+    width: 100%;
+    margin-top: 1rem;
+    border: 1px solid #dedede;
+    border-radius: 3px; 
+    padding: 20px 10px 0
+}
+
 
 /* -------------*/
 .form_size {

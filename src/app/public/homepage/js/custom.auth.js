@@ -1,10 +1,81 @@
 jQuery(document).ready(function($){
-    $('#item1').on('click', function () {
-        $('#item1 .flight-detail-info').toggle();
+    
+    ////////////////////////////////
+    ///-------INITIAL---------/////
+    ////////////////////////////////
+    var isChecked = $('#khuhoi').is(':checked')
+
+    $('#flight-list-back').addClass('flight-list-back');
+    $('#flight-list-back .flight-pay').addClass('display-none');
+    $('#flight-list-back .flight-kind').addClass('display-none');
+    $('#flight-list-back .flight-detail').addClass('display-none');
+
+    ////////////////////////////////
+    ///-------FUNCTION---------/////
+    ////////////////////////////////
+    $('#khuhoi').on('change', function() {
+        $('.timeKhuHoi').css('display','inline');
+    })
+    $('.search-btn').on('click', function () {
+        $('.search-container').slideToggle();
     });
 
-    //Chỗ này m kiểm tra khi mà gửi mail cho nó thì hiện dòng này lên callback ắ
-    $('#modelRegisterSuccess').modal('show')
+    $('#flight-list-back').on('click', function() {
+  
+        $('#flight-list-back .flight-pay').removeClass('display-none');
+        $('#flight-list-back .flight-kind').removeClass('display-none');
+        $('#flight-list-back .flight-detail').removeClass('display-none');
+
+        $('#flight-list-back').addClass('flight-list-go col-8')
+        $('#flight-list-go').addClass('flight-list-back col-4')
+
+        $('#flight-list-back').removeClass('flight-list-back col-4')
+        $('#flight-list-go').removeClass('flight-list-go col-8')
+
+        $('.flight-list-back .flight-pay').addClass('display-none');
+        $('.flight-list-back .flight-kind').addClass('display-none');
+        $('.flight-list-back .flight-detail').addClass('display-none');
+    })
+
+    $('#flight-list-go').on('click', function() {
+  
+        $('.flight-list-back .flight-pay').removeClass('display-none');
+        $('.flight-list-back .flight-kind').removeClass('display-none');
+        $('.flight-list-back .flight-detail').removeClass('display-none');
+
+        $('#flight-list-back').addClass('flight-list-go col-4')
+        $('#flight-list-go').addClass('flight-list-back col-8')
+
+        $('#flight-list-back').removeClass('flight-list-go col-8')
+        $('#flight-list-go').removeClass('flight-list-back col-4')
+
+        $('#flight-list-back .flight-pay').addClass('display-none');
+        $('#flight-list-back .flight-kind').addClass('display-none');
+        $('#flight-list-back .flight-detail').addClass('display-none');
+        $('#flight-list-back').addClass('flight-list-back');
+    })
+
+
+    //Demo airticket
+    $('#item1 .flight-detail-btn').on('click', function () {
+        $('#item1 .flight-detail-info').toggle();
+        $('#item1 .flight-detail-btn strong').toggleClass('flight-detail-btn-active');
+    });
+
+    
+    $('.form_date').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+    $('#motchieu').on('change', function() {
+        $('.timeKhuHoi').css('display','none');
+    })
 })
 
 

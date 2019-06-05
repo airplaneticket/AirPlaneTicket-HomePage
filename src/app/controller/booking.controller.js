@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const flightModel = require('../../models/flight.model');
 const dateTimeServices = require('../../services/date-time.services');
 const moment = require('moment');
@@ -22,4 +23,8 @@ module.exports.postSearchBooking = async(req, res) => {
     res.render('homepage/booking/booking.ejs', {
         searchData: inputData
     });
+=======
+module.exports.getBooking = (req, res) => {
+    res.render('homepage/booking/bookingOneSearch.ejs');
+>>>>>>> updateLayoutPayment
 }
