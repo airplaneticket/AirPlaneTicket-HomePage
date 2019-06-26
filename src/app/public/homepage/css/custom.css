@@ -8,8 +8,15 @@
 .display-none {
     display: none !important;
 }
-
 /* Flight */
+.flight-bg {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
 .flight-list {
     display: block;
     width: 960px;
