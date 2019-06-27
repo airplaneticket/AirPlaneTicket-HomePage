@@ -55,14 +55,6 @@ jQuery(document).ready(function($) {
         $('#flight-list-back').addClass('flight-list-back');
     })
 
-
-    //Demo airticket
-    $('#item1 .flight-detail-btn').on('click', function() {
-        $('#item1 .flight-detail-info').toggle();
-        $('#item1 .flight-detail-btn strong').toggleClass('flight-detail-btn-active');
-    });
-
-
     $('.form_date').datetimepicker({
         language: 'fr',
         weekStart: 1,
@@ -77,5 +69,4 @@ jQuery(document).ready(function($) {
         $('.timeKhuHoi').css('display', 'none');
     })
 
-    $('#test').modal('show');
 })

@@ -1,27 +1,32 @@
 const moment = require('moment');
 
-const flightModel = require('../../models/flight.model');
 const airportModel = require('../../models/airPort.model');
+const seatTypeModel = require("../../models/seatType.model");
+
+const service = require('../../services/booking.services')
 
 module.exports.postSearch = async(req, res) => {
     inputData = req.inputData;
-    let flights = await flightModel.find({}).and({ flightFrom: inputData.bookingFrom }, { flightDestination: inputData.bookingDestination }, {
-        $or: [{ 'flightDate.year': { $gte: inputData.bookingDepartTime.year } },
-            {
-                $and: [{ 'flightDate.month': { $gte: inputData.bookingDepartTime.month } }, { 'flightDate.day': { $gte: inputData.bookingDepartTime.day } }]
-            }
-        ]
-    });
-    let result = [];
-    for (flight of flights) {
-        for (let i = 0; i < flight.numberOfSeatTypes.length; i++) {
-            if (flight.numberOfSeatTypes[i] === inputData.bookingSeatClass) {
-                result.push(flight);
-            }
-        }
+    let seatType = await seatTypeModel.find({});
+    let airPort = await airportModel.find({});
+    let search = await service.format(inputData);
+    if (search.length <= 0) {
+        res.render('homepage/index.ejs', {
+            seatType,
+            airPort,
+            notify: 'Không có chuyến bay nào phù hợp'
+        });
+    } else {
+        res.render('homepage/index.ejs', {
+            search,
+            option: {
+                numberOfCustomer: inputData.numberOfCustomer,
+                seatType: inputData.bookingSeatClass
+            },
+            seatType,
+            airPort
+        });
     }
-    console.log(result);
-    res.redirect('/');
 }
 
 module.exports.getIndex = async(req, res) => {
@@ -30,4 +35,3 @@ module.exports.getIndex = async(req, res) => {
         airPort: req.airPort,
     });
 }
-5

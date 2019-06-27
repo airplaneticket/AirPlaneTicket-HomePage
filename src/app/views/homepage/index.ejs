@@ -38,24 +38,46 @@
     <!-- ===================================== -->
     <!-- ======= Start Flight list =========== -->
     <!-- ===================================== -->
-    <section class="flight-bg">
 
+    <section>
+
+        <div class="col-12 flight-list">
             <div class="container">
-                <h2 class="text-left" s>Chào mừng bạn đến với P/D AirLine</h2>
 
+                <div class="row">
+                    <h2 class="col-12 text-center">Danh sách các chuyến bay</h2>
+                </div>
                 <!-- End row-->
+
+                <hr/>
 
                 <div class="row">
 
-                    <div class="search-container">
+                    <div class="col-lg-10">
+                        <p class="margin-0">Thứ 2, 30 tháng 6 2019</p>
+                        <%if(typeof option === 'object'){%>
+                            <p class="margin-0"><%=option.numberOfCustomer%> người  &nbsp;|&nbsp;  <%=option.seatType%></p>
+                        <%}%>
+                    </div>
+
+                    <div class="col-lg-2">
+                        <button type="button" class="btn btn-primary search-btn">Đổi tìm kiếm</button>
+                    </div>
+
+                    <div class="search-container" style="display:none;">
                         <%include ../partials/common/search.ejs%>
                     </div>
 
                 </div>
-					<%include ../partials/common/ticket-one-search.ejs%>
-				
                 <!-- End row-->
 
+                <hr/>
+
+                <!-- Start ticket -->
+                <%include ../partials/common/ticket-one-search.ejs%>
+                <!-- End ticket -->
+
+            </div>
         </div>
         <!-- End flight-list -->
 
@@ -64,7 +86,9 @@
     <!-- ===================================== -->
     <!-- ========= End Flight list =========== -->
     <!-- ===================================== -->
-	<%-include ../partials/common/newNotifycation.ejs%>
+
+
+
 	<div class="cd-overlay-nav">
 		<span></span>
 	</div>
@@ -76,8 +100,34 @@
 	<!-- cd-overlay-content -->
 
 	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+    <div id="abc" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
 
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body text-center">
+                    <i class="fas fa-check-circle text-success" style="font-size: 48px"></i>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <%include ../partials/common/notification.ejs%>
     <%include ../include/auth/js.ejs%>
-
+    <script>
+    jQuery(document).ready(function($){
+        <%if(typeof notify === 'string'){%>
+			$('#modelRegisterSuccess').modal('show');
+		<%}%>
+        <%if(typeof search === 'object' && search.length>0){%>
+        <%for(item of search){%>
+            $("#"+<%=item.flightId%>+" .flight-detail-btn").on("click", function(){
+                $("#"+<%=item.flightId%>+" .flight-detail-info").toggle();
+                $("#"+<%=item.flightId%>+" .flight-detail-btn strong").toggleClass('flight-detail-btn-active');
+            });
+        <%}}%>
+    })
+</script>
 </body>
 </html>

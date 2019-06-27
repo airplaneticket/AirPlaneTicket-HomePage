@@ -1,13 +1,22 @@
 <!-- Modal -->
-<div class="modal fade" id="modelRegisterSuccess" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-        <div class="modal-body text-center">
-        <i class="fas fa-check-circle text-success" style="font-size: 48px"></i>
-        <%if(typeof notify === 'string'){%>
-        <p><%-notify%></p>
-        <%}%>
+<div id="modelRegisterSuccess" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <i class="fas fa-check-circle text-success" style="font-size: 48px"></i>
+                <%if(typeof notify === 'string'){%>
+                <p><%-notify%></p>
+                <%}%>
+            </div>
         </div>
-    </div>
+
     </div>
 </div>
+
+<script>
+    jQuery(document).ready(function($){
+        $('#modelRegisterSuccess').modal('show');
+    })
+</script>

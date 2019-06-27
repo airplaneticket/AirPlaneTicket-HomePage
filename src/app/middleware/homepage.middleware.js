@@ -25,38 +25,33 @@ module.exports.postSearch = async(req, res, next) => {
     };
     let inputTime = inputData.bookingDepartTime.split('-');
     let checkTime = '';
+    let seatType = await seatTypeModel.find({});
+    let airPort = await airPortModel.find({});
+    let err;
     for (let i = inputTime.length - 1; i >= 0; i--) {
         checkTime += inputTime[i];
     }
     let now = moment();
     let check = moment(checkTime);
     if (_.isEmpty(inputData.bookingDepartTime)) {
-        console.log('lỗi không có ngày');
-        req.flash('error', "Vui lòng chọn ngày khởi hành");
-        res.redirect('/');
-        return;
+        err = 'Vui lòng chọn thời gian khởi hành';
     }
     if (check.isBefore(now)) {
-        console.log('lỗi ngày');
-        req.flash('error', "Vui lòng chọn ngày khởi hành lớn hơn ngày hiện tại");
-        res.redirect('/');
-        return;
-
+        err = "Vui lòng chọn ngày khởi hành lớn hơn ngày hiện tại";
     }
     if (_.isEqual(inputData.bookingFrom, inputData.bookingDestination)) {
-        console.log('loi trung noi di den');
-        req.flash('error', "Vui lòng chọn nơi khởi hành khác nơi đi khác nơi đến");
-        res.redirect('/');
+        err = "Vui lòng chọn nơi khởi hành khác nơi đi khác nơi đến";
+    }
+    if (typeof err === 'string') {
+        res.render('homepage/index.ejs', {
+            seatType,
+            airPort,
+            notify: err
+        });
         return;
+    } else {
+        req.inputData = inputData;
+        next();
+    }
 
-    }
-    let searchTime = inputData.bookingDepartTime.split('-');
-    searchTime = {
-        day: parseInt(searchTime[0]),
-        month: parseInt(searchTime[1]),
-        year: parseInt(searchTime[2])
-    }
-    inputData.bookingDepartTime = searchTime;
-    req.inputData = inputData;
-    next();
 }

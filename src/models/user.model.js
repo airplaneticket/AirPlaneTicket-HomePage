@@ -49,17 +49,15 @@ usersSchema.pre('save', function(next) {
             next();
         });
 });
-
-usersSchema.pre('update', function(next) {
-    let user = this;
-    console.log(this.password);
-});
-
 usersSchema.methods.forgotPassword = async function(hashString) {
     return bcrypt.hash(hashString, saltRound)
         .then((hash) => {
             this.password = hash;
         });
+}
+
+usersSchema.methods.isRightPassword = async function(password) {
+    return bcrypt.compare(password, this.password);
 }
 
 let userModel = mongoose.model('userModel', usersSchema, 'Users');
