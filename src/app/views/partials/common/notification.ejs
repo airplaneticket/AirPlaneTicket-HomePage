@@ -5,7 +5,7 @@
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-body text-center">
-                <i class="fas fa-check-circle text-success" style="font-size: 48px"></i>
+                <i class="fas fa-info-circle text-primary" style="font-size: 48px"></i>
                 <%if(typeof notify === 'string'){%>
                 <p><%-notify%></p>
                 <%}%>
@@ -14,9 +14,3 @@
 
     </div>
 </div>
-
-<script>
-    jQuery(document).ready(function($){
-        $('#modelRegisterSuccess').modal('show');
-    })
-</script>

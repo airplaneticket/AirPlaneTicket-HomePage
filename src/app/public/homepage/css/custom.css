@@ -74,7 +74,7 @@
     padding-top: 1rem;
 }
 .flight-info-col span {
-    font-size: 20px;
+    font-size: 13px;
 }
 
 .flight-img {
@@ -304,10 +304,12 @@
     margin: 1rem 1.5rem 0 0;
     font-size: 20px
 }
-
+.info-airplane span {
+    font-size: 18px;
+}
 /* Right detail */
 .right-detail {
-    margin: 2rem 0;
+    margin: 2rem 0 1.2rem 0;
     width: 100%;
     min-height: 200px;
     -webkit-box-sizing: border-box;
@@ -317,6 +319,10 @@
     box-shadow: rgba(3, 18, 26, 0.15) 0px 2px 5px;
     position: relative;
 }
+.right-detail table tbody td {
+    padding: 10px 0;
+}
+
 .total-price {
     width: 100%;
     min-height: 50px;
@@ -325,22 +331,22 @@
     border-bottom-right-radius: 10px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
+    justify-content: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
 }
 
 /* Bottom detail */
-.bottom-detail {
-    width: 100%;
-    min-height: 50px;
+.btn-submit{
+    color: #fff;
     background-color: #fb8b34;
 }
-.bottom-detail p {
-    font-size: 20px;
+.btn-submit:hover {
     color: #fff;
-    font-weight: 500;
-}
-.bottom-detail:hover {
     background-color: #f96d01;
-    cursor: pointer;
+    border-color: #f96d01;
 }
 
 /* Search */
@@ -352,6 +358,15 @@
     padding: 20px 10px 0
 }
 
+/* Footer */
+footer {
+    padding: 1em !important;
+    bottom: 0;
+    position: fixed;
+    left: 0;
+    border: 1px solid #ededed;
+    /* right: 0; */
+}
 
 /* -------------*/
 .form_size {
