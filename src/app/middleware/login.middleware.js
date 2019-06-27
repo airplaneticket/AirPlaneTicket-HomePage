@@ -18,7 +18,6 @@ module.exports.postLogin = async(req, res, next) => {
             .then((isMatch) => { //nhan lai 1 bien boolean kiem tra password co dung khong
                 if (isMatch) {
                     if (user[0].active === true) {
-                        console.log('login');
                         req.user = user[0];
                         next();
                     } else {

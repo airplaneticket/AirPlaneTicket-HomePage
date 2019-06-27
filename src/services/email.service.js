@@ -32,8 +32,8 @@ module.exports.sendMailForgotPassword = function(email, password, res) {
     const mailOptions = {
         from: 'AirPlaneTicket PhongDuy mailbox', // sender address
         to: email, // list of receivers
-        subject: 'Respone your reset password request from AirPlaneTicket PhongDuy website', // Subject line
-        html: '<p><b>Your new password: </b>' + password + '</p><br><b>You can change your password after you have logined</b>' // plain text body
+        subject: 'Phản hồi quên mật khẩu P/D Airline', // Subject line
+        html: '<p><b>Mật khẩu mới của bạn là: </b>' + password + '</p>' // plain text body
     };
     transporter.sendMail(mailOptions, function(err, info) {
         if (err)
