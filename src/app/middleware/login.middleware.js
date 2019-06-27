@@ -1,24 +1,25 @@
 const userModel = require('../../models/user.model');
 
 module.exports.postLogin = async(req, res, next) => {
-    let inputData = {
-        email: req.body.loginEmail,
-        password: req.body.loginPassword
-    }
     try {
-        let user = await userModel.findOne({ email: inputData.email });
-        if (!user) {
+        let inputData = {
+            email: req.body.loginEmail,
+            password: req.body.loginPassword
+        }
+        let user = await userModel.find({ email: inputData.email });
+        if (user.length <= 0) {
             res.render('homepage/login/login.ejs', {
                 inputData: inputData,
                 notify: "Email này chưa được đăng kí"
             });
             return;
         }
-        user.isRightPassword(inputData.password)
+        user[0].isRightPassword(inputData.password)
             .then((isMatch) => { //nhan lai 1 bien boolean kiem tra password co dung khong
                 if (isMatch) {
-                    if (user.active === true) {
-                        req.user = user;
+                    if (user[0].active === true) {
+                        console.log('login');
+                        req.user = user[0];
                         next();
                     } else {
                         res.render('homepage/login/login.ejs', {

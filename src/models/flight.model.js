@@ -5,31 +5,35 @@ let flightSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    airlineInfor: {
-        type: Object,
-        required: true
-    },
-    from: {
+    flightName: {
         type: String,
         required: true
     },
-    destination: {
+    flightFrom: {
+        type: String,
+        required: true
+    },
+    flightDestination: {
+        type: String,
+        required: true
+    },
+    flightDepartTime: {
         type: String,
         required: true
     },
     flightDate: {
-        type: Date,
+        type: Object,
         required: true
     },
     flightTime: {
-        type: Number,
+        type: String,
         required: true
     },
-    middleAirPort: {
+    flightMiddleAirport: {
         type: Object,
         default: []
     },
-    timeAtMiddleAirPort: {
+    flightMiddleAirportTime: {
         type: Object,
         default: []
     },
@@ -38,15 +42,31 @@ let flightSchema = new mongoose.Schema({
         default: [],
         required: true
     },
-    numberOfSeat: {
+    numberOfSeats: {
         type: Object,
         default: [],
         required: true
     },
-    priceOfSeatType: {
+    priceOfSeats: {
         type: Object,
         default: [],
         required: true
+    },
+    seatTypeBoughts: {
+        type: Object,
+        default: []
+    },
+    totalSeat: {
+        type: Number,
+        required: true
+    },
+    boughtSeat: {
+        type: Number,
+        default: 0
+    },
+    income: {
+        type: Number,
+        default: 0
     }
 });
 

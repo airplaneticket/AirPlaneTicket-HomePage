@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
-let airPortSchema = new mongoose.Schema({
-    airPortCode: {
+let airportSchema = new mongoose.Schema({
+    airportCode: {
         type: String,
         required: true
     },
-    airPortName: {
+    airportName: {
         type: String,
         required: true
     },
@@ -16,10 +16,10 @@ let airPortSchema = new mongoose.Schema({
     locationName: {
         type: String,
         required: true
-    }
+    },
 });
 
 
-let airPortModel = mongoose.model('airPortModel', airPortSchema, 'AirPorts');
+let airportModel = mongoose.model('airportModel', airportSchema, 'Airports');
 
-module.exports = airPortModel;
+module.exports = airportModel;

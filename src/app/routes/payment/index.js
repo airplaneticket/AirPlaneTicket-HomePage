@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req,res) => {
-    res.render('homepage/payment/payment.ejs');
-})
+const paymentController = require('../../controller/payment.controller');
+
+router.post('/', paymentController.getPayment);
+
+router.post('/confirm', paymentController.postConfirm)
 
 module.exports = router

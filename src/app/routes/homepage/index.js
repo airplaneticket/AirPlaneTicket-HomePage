@@ -7,4 +7,6 @@ const router = express.Router();
 
 router.get('/', homepageMiddleware.getIndex, homepageController.getIndex);
 
+router.post('/', homepageMiddleware.postSearch, homepageController.postSearch);
+
 module.exports = router;

@@ -1,5 +1,5 @@
-jQuery(document).ready(function($){
-    
+jQuery(document).ready(function($) {
+
     ////////////////////////////////
     ///-------INITIAL---------/////
     ////////////////////////////////
@@ -14,14 +14,14 @@ jQuery(document).ready(function($){
     ///-------FUNCTION---------/////
     ////////////////////////////////
     $('#khuhoi').on('change', function() {
-        $('.timeKhuHoi').css('display','inline');
+        $('.timeKhuHoi').css('display', 'inline');
     })
-    $('.search-btn').on('click', function () {
+    $('.search-btn').on('click', function() {
         $('.search-container').slideToggle();
     });
 
     $('#flight-list-back').on('click', function() {
-  
+
         $('#flight-list-back .flight-pay').removeClass('display-none');
         $('#flight-list-back .flight-kind').removeClass('display-none');
         $('#flight-list-back .flight-detail').removeClass('display-none');
@@ -38,7 +38,7 @@ jQuery(document).ready(function($){
     })
 
     $('#flight-list-go').on('click', function() {
-  
+
         $('.flight-list-back .flight-pay').removeClass('display-none');
         $('.flight-list-back .flight-kind').removeClass('display-none');
         $('.flight-list-back .flight-detail').removeClass('display-none');
@@ -55,27 +55,18 @@ jQuery(document).ready(function($){
         $('#flight-list-back').addClass('flight-list-back');
     })
 
-
-    //Demo airticket
-    $('#item1 .flight-detail-btn').on('click', function () {
-        $('#item1 .flight-detail-info').toggle();
-        $('#item1 .flight-detail-btn strong').toggleClass('flight-detail-btn-active');
-    });
-
-    
     $('.form_date').datetimepicker({
-        language:  'fr',
+        language: 'fr',
         weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		minView: 2,
-		forceParse: 0
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
     });
     $('#motchieu').on('change', function() {
-        $('.timeKhuHoi').css('display','none');
+        $('.timeKhuHoi').css('display', 'none');
     })
+
 })
-
-
