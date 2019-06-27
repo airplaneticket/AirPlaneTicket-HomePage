@@ -11,8 +11,8 @@ module.exports.sendMailVerify = function(email, hash, password, res) {
     const mailOptions = {
         from: 'AirPlaneTicket PhongDuy mailbox', // sender address
         to: email, // list of receivers
-        subject: 'Verify mail from AirPlaneTicket PhongDuy website',
-        html: '<p><b>Please click this link to verify your account:</b> http://localhost:' + process.env.PORT + '/register/verify/' + hash + '</p>\n<i>Your password: </i>' + '<b>' + password + '</b>'
+        subject: 'Xác thực tài khoản P/D Airline',
+        html: '<p><b>Vui lòng bấm vào đường dẫn để xác thực tài khoản:</b> http://localhost:' + process.env.PORT + '/register/verify/' + hash + '</p>'
     };
     transporter.sendMail(mailOptions, function(err, info) {
         if (err)
@@ -32,8 +32,8 @@ module.exports.sendMailForgotPassword = function(email, password, res) {
     const mailOptions = {
         from: 'AirPlaneTicket PhongDuy mailbox', // sender address
         to: email, // list of receivers
-        subject: 'Respone your reset password request from AirPlaneTicket PhongDuy website', // Subject line
-        html: '<p><b>Your new password: </b>' + password + '</p><br><b>You can change your password after you have logined</b>' // plain text body
+        subject: 'Phản hồi quên mật khẩu P/D Airline', // Subject line
+        html: '<p><b>Mật khẩu mới của bạn là: </b>' + password + '</p>' // plain text body
     };
     transporter.sendMail(mailOptions, function(err, info) {
         if (err)

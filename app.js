@@ -33,6 +33,10 @@ app.use(session);
 app.use(flash());
 
 require('./src/app/routes/index')(app);
+app.use((req, res) => {
+    res.status(404);
+    res.send('404 ERROR');
+})
 
 
 app.listen(process.env.PORT);
