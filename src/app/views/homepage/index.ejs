@@ -112,9 +112,9 @@
             <%}%>
             <%if(typeof search === 'object' && search.length>0){%>
             <%for(item of search){%>
-                $("#"+<%=item.flightId%>+" .flight-detail-btn").on("click", function(){
-                    $("#"+<%=item.flightId%>+" .flight-detail-info").toggle();
-                    $("#"+<%=item.flightId%>+" .flight-detail-btn strong").toggleClass('flight-detail-btn-active');
+                $("#<%=item.flightId%> .flight-detail-btn").on("click", function(){
+                    $("#<%=item.flightId%> .flight-detail-info").toggle();
+                    $("#<%=item.flightId%> .flight-detail-btn strong").toggleClass('flight-detail-btn-active');
                 });
             <%}}%>
         })
