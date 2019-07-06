@@ -39,7 +39,7 @@
     <!-- ======= Start Flight list =========== -->
     <!-- ===================================== -->
 
-    <section>
+    <section style="height:100vh">
 
         <div class="col-12 flight-list">
             <div class="container">
@@ -64,7 +64,7 @@
                         <button type="button" class="btn btn-primary search-btn">Đổi tìm kiếm</button>
                     </div>
 
-                    <div class="search-container" style="display:none;">
+                    <div class="search-container">
                         <%include ../partials/common/search.ejs%>
                     </div>
 
@@ -87,7 +87,8 @@
     <!-- ========= End Flight list =========== -->
     <!-- ===================================== -->
 
-
+    <!-- Footer -->
+    <%include ../partials/common/footer.ejs%>
 
 	<div class="cd-overlay-nav">
 		<span></span>
@@ -100,34 +101,24 @@
 	<!-- cd-overlay-content -->
 
 	<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
-    <div id="abc" class="modal fade" role="dialog">
-        <div class="modal-dialog modal-dialog-centered">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-body text-center">
-                    <i class="fas fa-check-circle text-success" style="font-size: 48px"></i>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
     <%include ../partials/common/notification.ejs%>
     <%include ../include/auth/js.ejs%>
+
     <script>
-    jQuery(document).ready(function($){
-        <%if(typeof notify === 'string'){%>
-			$('#modelRegisterSuccess').modal('show');
-		<%}%>
-        <%if(typeof search === 'object' && search.length>0){%>
-        <%for(item of search){%>
-            $("#"+<%=item.flightId%>+" .flight-detail-btn").on("click", function(){
-                $("#"+<%=item.flightId%>+" .flight-detail-info").toggle();
-                $("#"+<%=item.flightId%>+" .flight-detail-btn strong").toggleClass('flight-detail-btn-active');
-            });
-        <%}}%>
-    })
-</script>
+        jQuery(document).ready(function($){
+            <%if(typeof notify === 'string'){%>
+                $('#modelRegisterSuccess').modal('show');
+            <%}%>
+            <%if(typeof search === 'object' && search.length>0){%>
+            <%for(item of search){%>
+                $("#<%=item.flightId%> .flight-detail-btn").on("click", function(){
+                    $("#<%=item.flightId%> .flight-detail-info").toggle();
+                    $("#<%=item.flightId%> .flight-detail-btn strong").toggleClass('flight-detail-btn-active');
+                });
+            <%}}%>
+        })
+    </script>
+
 </body>
 </html>
