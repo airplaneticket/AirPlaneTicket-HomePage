@@ -2,9 +2,9 @@ module.exports.requireLogin = async function(req, res, next) {
     if (req.session.user && req.signedCookies.userSessionId)
         next();
     else
-        res.render('homepage/login/login.ejs', {
-            notify: 'Vui lòng đăng nhập để sử dụng dịch vụ'
-        });
+   {     res.render('homepage/login/login.ejs', {
+            notify: 'Hãy đăng nhập để sử dụng dịch vụ'
+        });}
 }
 
 
